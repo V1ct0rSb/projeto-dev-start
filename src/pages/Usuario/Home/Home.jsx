@@ -1,4 +1,4 @@
-import styles from "./home.module.css";
+import styles from "./Home.module.css";
 import NavbarHome from "../../../components/NavbarHome/NavbarHome";
 import AnimatedText from "../../../components/Animacao/AnimatedText"; 
 import VideoHome01 from "../../../assets/VideoHome01.mp4";
