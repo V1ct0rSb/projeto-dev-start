@@ -1,4 +1,4 @@
-import styles from "./navbarHome.module.css"
+import styles from "./NavbarHome.module.css"
 import { MdAccountCircle } from "react-icons/md"
 import { Link } from "react-router-dom"
 import logoPrincipal from "../../assets/logoPrincipal.png"
