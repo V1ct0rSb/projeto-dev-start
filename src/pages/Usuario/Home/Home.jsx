@@ -105,25 +105,38 @@ export default function Home() {
             <div className={styles.card}>
               <span className={styles.icon}>🚀</span>
               <h4>Crie projetos do zero</h4>
-              <p>Transforme ideias em código funcional.</p>
+              <p>
+                Dê vida às suas ideias iniciando projetos desde o início.
+                Desenvolva soluções práticas e criativas, colocando em prática
+                tudo o que você aprendeu.
+              </p>
             </div>
 
             <div className={styles.card}>
               <span className={styles.icon}>🎯</span>
               <h4>Estude com objetivos claros</h4>
-              <p>Crie um plano de aprendizado eficaz.</p>
+              <p>
+                Saber exatamente o que você quer alcançar ajuda a manter o foco
+                e a motivação.
+              </p>
             </div>
 
             <div className={styles.card}>
               <span className={styles.icon}>⏰</span>
               <h4>Pratique no seu tempo</h4>
-              <p>Adapte o aprendizado à sua rotina.</p>
+              <p>
+                Adapte o ritmo de aprendizado às suas necessidades e aproveite
+                cada momento ao máximo.
+              </p>
             </div>
 
             <div className={styles.card}>
               <span className={styles.icon}>⚡</span>
-              <h4>Pequenos passos, grandes conquistas</h4>
-              <p>Divida sua jornada em metas menores.</p>
+              <h4>Pequenos passos grandes conquistas</h4>
+              <p>
+                Divida sua jornada em etapas menores e celebre cada conquista no
+                caminho para alcançar seus objetivos maiores.
+              </p>
             </div>
 
             <div className={styles.card}>

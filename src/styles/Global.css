@@ -8,6 +8,15 @@
   font-family: "Fira Code", roboto, sans-serif, Arial, Helvetica;
 }
 
+:root {
+  --corBotao: #119fe3;
+  --hoverBotao: #0056b3;
+  --corTitulo: #f1f5f9;
+  --corParagrafo: #f1f5f9;
+  --corTrasicaoBorda: #5d5d5d;
+  --fundoPreto: #000
+}
+
 html {
   scroll-behavior: smooth;
 }

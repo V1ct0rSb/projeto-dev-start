@@ -23,13 +23,13 @@
 
 .navLink {
   font-size: 2.1875rem;
-  color: #ffffff;
+  color: var(--corParagrafo);
   transition: transform 0.3s, color 0.3s;
 }
 
 .navLink:hover {
   transform: scale(1.2);
-  color: #95f6fb;
+  color: var(--corBotao);
 }
 
 /* Link - Login Admin */
@@ -39,12 +39,12 @@
 }
 
 .loginIcon {
-  color: #ffffff;
+  color: var(--corParagrafo);
 }
 
 .loginIcon:hover {
   transition: color 0.2s ease;
-  color: #95f6fb;
+  color: var(--corBotao);
 }
 
 /* Estilos responsivos */

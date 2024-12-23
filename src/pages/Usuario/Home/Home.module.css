@@ -5,7 +5,7 @@
   background-position: center;
   background-repeat: no-repeat;
   height: 75vh;
-  background-color: rgba(0, 0, 0, 0.6);
+  /* background-color: rgba(0, 0, 0, 0.6); */
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -43,8 +43,8 @@
 
 /* Botão "Mais Informações" */
 .buttonIntroducao button {
-  background-color: #007bff;
-  color: #fff;
+  background-color: var(--corBotao);
+  color: var(--corParagrafo);
   font-size: 20px;
   font-weight: bold;
   padding: 15px 20px;
@@ -52,24 +52,21 @@
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   margin-top: 35px;
 }
 
 .buttonIntroducao button:hover {
-  background-color: #0056b3;
+  background-color: var(--hoverBotao);
   transform: translateY(-3px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
 
 .buttonIntroducao button:active {
   transform: translateY(0);
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* ======================================  Sesssão 02 -> Chamar atenção do Usuario */
 .sectionEngajamento {
-  border-top: 2px solid rgb(93, 93, 93);
+  border-top: 2px solid var(--corTrasicaoBorda);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,13 +90,13 @@
 .engajamentoTexto h2 {
   font-size: 40px;
   margin-bottom: 1rem;
-  color: #f1f5f9;
+  color: var(--corTitulo);
 }
 
 .engajamentoTexto p {
   font-size: 18px;
   line-height: 1.6;
-  color: #f1f5f9;
+  color: var(--corParagrafo);
   text-align: justify;
 }
 
@@ -123,9 +120,9 @@
 
 /* =============------------------------------------------------------------- Section 03  */
 .sectionPratica {
-  border-top: 2px solid rgb(93, 93, 93);
+  border-top: 2px solid var( --corTrasicaoBorda);
   padding: 70px 20px;
-  background: black;
+  background: var(--fundoPreto);
   text-align: center;
   line-height: 1.6;
 }
@@ -133,13 +130,13 @@
 .sectionPratica h2 {
   font-size: 40px;
   font-weight: bold;
-  color: #f1f5f9; /* Branco acinzentado */
-  /* margin-bottom: 1.5rem; */
+  color: var(--corTitulo); 
+
 }
 
 .sectionPratica p {
   font-size: 1.25rem;
-  color: #e8e8e8; /* Cinza claro */
+  color: var(--corParagrafo); 
   margin-bottom: 3rem;
 }
 
@@ -157,40 +154,40 @@
 
 /* Estilos individuais para os cartões */
 .card {
-  background: linear-gradient(135deg, #52F9FD, #f8fafc); /* Gradiente sutil */
+  background: linear-gradient(135deg, #119fe3, #b9fbc0);
   border-radius: 10px;
   padding: 20px;
   width: 100%;
-  max-width: 300px;
+  max-width: 500px;
   text-align: center;
   transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
     box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .card:hover {
-  transform: translateY(-10px) scale(1.02); /* Elevação com leve ampliação */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+  transform: translateY(-10px) scale(1.02); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
 }
 
 /* Estilo do ícone nos cartões */
 .icon {
-  font-size: 3rem;
-  margin-bottom: 15px;
-  color: #2563eb; /* Azul vibrante */
+  font-size: 50px;
 }
 
 /* Títulos dentro dos cartões */
 .card h4 {
-  font-size: 1.3rem;
+  font-size: 21px;
   font-weight: bold;
   color: #333;
-  margin-bottom: 10px;
+  margin-top: 15px;
 }
 
 /* Parágrafos dentro dos cartões */
 .card p {
-  font-size: 1rem;
-  color: #666;
+  font-size: 18px;
+  color: #393939;
+  margin-top: 5px;
+  text-align: center;
 }
 
 /* Adicionar animação no hover */
