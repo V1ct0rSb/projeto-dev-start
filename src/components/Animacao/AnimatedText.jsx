@@ -14,13 +14,15 @@ const AnimatedText = () => {
   const [currentText, setCurrentText] = useState("");
   const [index, setIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [showCursor, setShowCursor] = useState(true); 
+  const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
     const handleTyping = () => {
       const fullText = texts[index];
       setCurrentText((prev) =>
-        isDeleting ? fullText.substring(0, prev.length - 1) : fullText.substring(0, prev.length + 1)
+        isDeleting
+          ? fullText.substring(0, prev.length - 1)
+          : fullText.substring(0, prev.length + 1)
       );
 
       if (!isDeleting && currentText === fullText) {
@@ -47,7 +49,7 @@ const AnimatedText = () => {
   return (
     <span style={{ color: "#fff", fontWeight: "bold" }}>
       {currentText}
-      <span style={{ opacity: showCursor ? 1 : 0 }}>|</span> 
+      <span style={{ opacity: showCursor ? 1 : 0 }}>|</span>
     </span>
   );
 };
