@@ -65,7 +65,6 @@ export default function Home() {
                   </li>
                 </ul>
                 <p>
-                  {" "}
                   Sabemos que o começo pode parecer desafiador, mas você não
                   está sozinho nessa jornada. Nossa missão é orientar, educar e
                   inspirar futuros programadores, mostrando que todos têm a
@@ -73,7 +72,6 @@ export default function Home() {
                   ferramentas certas.
                 </p>
                 <p>
-                  {" "}
                   Seja para criar seu próprio site, desenvolver aplicativos ou
                   entender os conceitos fundamentais da programação, o{" "}
                   <strong>DevStart</strong> está aqui para guiá-lo. Tudo isso de

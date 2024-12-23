@@ -1,11 +1,10 @@
-/* Sessão 01 -> Introdução com React Typed */
+/* =================================================== Sessão 01 -> Introdução com React Typed */
 .sectionIntroducao {
   background-image: url(../../../assets/codeHome.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 75vh;
-  /* background-color: rgba(0, 0, 0, 0.6); */
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -64,22 +63,21 @@
   transform: translateY(0);
 }
 
-/* ======================================  Sesssão 02 -> Chamar atenção do Usuario */
+/* ====================================================  Sesssão 02 -> Chamar atenção do Usuario */
 .sectionEngajamento {
   border-top: 2px solid var(--corTrasicaoBorda);
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  gap: 2rem; /* Espaço entre o texto e o vídeo */
+  padding: 32px;
   background-image: linear-gradient(180deg, #3c3c3c 0%, #000000 22%);
 }
 
 .engajamentoConteudo {
+  width: 1400px;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 2rem; /* Espaço entre o texto e o vídeo */
+  justify-content: space-between;
+  gap: 2rem;
 }
 
 .engajamentoTexto {
@@ -89,13 +87,13 @@
 
 .engajamentoTexto h2 {
   font-size: 40px;
-  margin-bottom: 1rem;
+  margin-bottom: 40px;
   color: var(--corTitulo);
 }
 
 .engajamentoTexto p {
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--corParagrafo);
   text-align: justify;
 }
@@ -108,7 +106,7 @@
 .engajamentoVideo {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
 }
 
@@ -118,9 +116,9 @@
   border-radius: 10px;
 }
 
-/* =============------------------------------------------------------------- Section 03  */
+/*  ========================================================================= Section 03  */
 .sectionPratica {
-  border-top: 2px solid var( --corTrasicaoBorda);
+  border-top: 2px solid var(--corTrasicaoBorda);
   padding: 70px 20px;
   background: var(--fundoPreto);
   text-align: center;
@@ -130,17 +128,15 @@
 .sectionPratica h2 {
   font-size: 40px;
   font-weight: bold;
-  color: var(--corTitulo); 
-
+  color: var(--corTitulo);
 }
 
 .sectionPratica p {
   font-size: 1.25rem;
-  color: var(--corParagrafo); 
+  color: var(--corParagrafo);
   margin-bottom: 3rem;
 }
 
-/* Estilo do contêiner de cartões */
 .cardsContainer {
   width: 100%;
   max-width: 1100px;
@@ -152,7 +148,6 @@
   justify-items: center;
 }
 
-/* Estilos individuais para os cartões */
 .card {
   background: linear-gradient(135deg, #119fe3, #b9fbc0);
   border-radius: 10px;
@@ -165,16 +160,14 @@
 }
 
 .card:hover {
-  transform: translateY(-10px) scale(1.02); 
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo do ícone nos cartões */
 .icon {
   font-size: 50px;
 }
 
-/* Títulos dentro dos cartões */
 .card h4 {
   font-size: 21px;
   font-weight: bold;
@@ -182,7 +175,6 @@
   margin-top: 15px;
 }
 
-/* Parágrafos dentro dos cartões */
 .card p {
   font-size: 18px;
   color: #393939;
@@ -190,7 +182,6 @@
   text-align: center;
 }
 
-/* Adicionar animação no hover */
 @keyframes wiggle {
   0%,
   100% {
@@ -205,7 +196,7 @@
   animation: wiggle 0.3s ease-out;
 }
 
-/* ======================================  Voltar para o Top */
+/* ============================================================================  Voltar para o Top */
 
 .scrollToTopButton {
   position: fixed;
