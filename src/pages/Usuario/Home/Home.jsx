@@ -41,6 +41,9 @@ export default function Home() {
           <h1 className={styles.introTitulo}>Aprenda a programar</h1>
           <div className={styles.animatedTextContainer}>
             <AnimatedText />
+            <div className={styles.buttonIntroducao}>
+              <button>Mais Informações</button>
+            </div>
           </div>
         </section>
 
@@ -87,6 +90,58 @@ export default function Home() {
               <video autoPlay loop muted className={styles.bannerVideo}>
                 <source src={VideoHome01} type="video/mp4" />
               </video>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.sectionPratica}>
+          <h2>Você só aprende praticando e experimentando</h2>
+          <p>
+            Não tenha medo de errar, cada linha de código te aproxima do
+            sucesso!
+          </p>
+
+          <div className={styles.cardsContainer}>
+            <div className={styles.card}>
+              <span className={styles.icon}>🚀</span>
+              <h4>Crie projetos do zero</h4>
+              <p>Transforme ideias em código funcional.</p>
+            </div>
+
+            <div className={styles.card}>
+              <span className={styles.icon}>🎯</span>
+              <h4>Estude com objetivos claros</h4>
+              <p>Crie um plano de aprendizado eficaz.</p>
+            </div>
+
+            <div className={styles.card}>
+              <span className={styles.icon}>⏰</span>
+              <h4>Pratique no seu tempo</h4>
+              <p>Adapte o aprendizado à sua rotina.</p>
+            </div>
+
+            <div className={styles.card}>
+              <span className={styles.icon}>⚡</span>
+              <h4>Pequenos passos, grandes conquistas</h4>
+              <p>Divida sua jornada em metas menores.</p>
+            </div>
+
+            <div className={styles.card}>
+              <span className={styles.icon}>👩‍💻</span>
+              <h4>Pratique lógica de programação</h4>
+              <p>
+                Treine sua capacidade de resolver problemas com exercícios
+                focados em algoritmos e lógica.
+              </p>
+            </div>
+
+            <div className={styles.card}>
+              <span className={styles.icon}>🔗</span>
+              <h4>Integre teoria com prática</h4>
+              <p>
+                Não pule os conceitos, mas sempre aplique o que aprender em
+                projetos reais.
+              </p>
             </div>
           </div>
         </section>

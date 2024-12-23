@@ -32,13 +32,39 @@
 }
 
 .introTitulo {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
 .animatedTextContainer {
-  font-size: 30px;
+  font-size: 40px;
+}
+
+/* Botão "Mais Informações" */
+.buttonIntroducao button {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  margin-top: 35px;
+}
+
+.buttonIntroducao button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.buttonIntroducao button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* ======================================  Sesssão 02 -> Chamar atenção do Usuario */
@@ -65,15 +91,15 @@
 }
 
 .engajamentoTexto h2 {
-  font-size: 35px;
+  font-size: 40px;
   margin-bottom: 1rem;
-  color: white;
+  color: #f1f5f9;
 }
 
 .engajamentoTexto p {
   font-size: 18px;
   line-height: 1.6;
-  color: rgb(232, 232, 232);
+  color: #f1f5f9;
   text-align: justify;
 }
 
@@ -93,6 +119,93 @@
   max-width: 100%;
   max-height: 800px;
   border-radius: 10px;
+}
+
+/* =============------------------------------------------------------------- Section 03  */
+.sectionPratica {
+  border-top: 2px solid rgb(93, 93, 93);
+  padding: 70px 20px;
+  background: black;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.sectionPratica h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f5f9; /* Branco acinzentado */
+  /* margin-bottom: 1.5rem; */
+}
+
+.sectionPratica p {
+  font-size: 1.25rem;
+  color: #e8e8e8; /* Cinza claro */
+  margin-bottom: 3rem;
+}
+
+/* Estilo do contêiner de cartões */
+.cardsContainer {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: clamp(20px, 5vw, 40px);
+  justify-items: center;
+}
+
+/* Estilos individuais para os cartões */
+.card {
+  background: linear-gradient(135deg, #52F9FD, #f8fafc); /* Gradiente sutil */
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02); /* Elevação com leve ampliação */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+}
+
+/* Estilo do ícone nos cartões */
+.icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #2563eb; /* Azul vibrante */
+}
+
+/* Títulos dentro dos cartões */
+.card h4 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Parágrafos dentro dos cartões */
+.card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Adicionar animação no hover */
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+}
+
+.card:hover {
+  animation: wiggle 0.3s ease-out;
 }
 
 /* ======================================  Voltar para o Top */
