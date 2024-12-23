@@ -21,7 +21,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(.3125rem);
   z-index: 0;
 }
 
@@ -31,32 +31,32 @@
 }
 
 .introTitulo {
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
 .animatedTextContainer {
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 
 /* Botão "Mais Informações" */
 .buttonIntroducao button {
   background-color: var(--corBotao);
   color: var(--corParagrafo);
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bold;
-  padding: 15px 20px;
+  padding: .9375rem 1.25rem;
   border: none;
-  border-radius: 5px;
+  border-radius: .3125rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  margin-top: 35px;
+  margin-top: 2.1875rem;
 }
 
 .buttonIntroducao button:hover {
   background-color: var(--hoverBotao);
-  transform: translateY(-3px);
+  transform: translateY(-0.1875rem);
 }
 
 .buttonIntroducao button:active {
@@ -65,15 +65,15 @@
 
 /* ====================================================  Sesssão 02 -> Chamar atenção do Usuario */
 .sectionEngajamento {
-  border-top: 2px solid var(--corTrasicaoBorda);
+  border-top: .125rem solid var(--corTrasicaoBorda);
   display: flex;
   justify-content: center;
-  padding: 32px;
+  padding: 6.25rem;
   background-image: linear-gradient(180deg, #3c3c3c 0%, #000000 22%);
 }
 
 .engajamentoConteudo {
-  width: 1400px;
+  width: 87.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -82,17 +82,17 @@
 
 .engajamentoTexto {
   flex: 1;
-  max-width: 1200px;
+  max-width: 75rem;
 }
 
 .engajamentoTexto h2 {
-  font-size: 40px;
-  margin-bottom: 40px;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
   color: var(--corTitulo);
 }
 
 .engajamentoTexto p {
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.5;
   color: var(--corParagrafo);
   text-align: justify;
@@ -112,21 +112,73 @@
 
 .bannerVideo {
   max-width: 100%;
-  max-height: 800px;
-  border-radius: 10px;
+  max-height: 50rem;
+  border-radius: .625rem;
+}
+
+@media (max-width: 1024px) {
+  .engajamentoConteudo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .engajamentoTexto {
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .engajamentoTexto h2 {
+    font-size: 1.75rem;
+  }
+
+  .engajamentoTexto p {
+    font-size: .875rem;
+  }
+
+  .engajamentoVideo {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .engajamentoTexto h2 {
+    font-size: 1.5rem;
+  }
+
+  .engajamentoTexto p {
+    font-size: .75rem;
+  }
+
+  .bannerVideo {
+    max-height: 18.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .engajamentoTexto h2 {
+    font-size: 1.25rem;
+  }
+
+  .engajamentoTexto p {
+    font-size: .625rem;
+  }
+
+  .bannerVideo {
+    max-height: 12.5rem;
+  }
 }
 
 /*  ========================================================================= Section 03  */
 .sectionPratica {
-  border-top: 2px solid var(--corTrasicaoBorda);
-  padding: 70px 20px;
+  border-top: .125rem solid var(--corTrasicaoBorda);
+  padding: 4.375rem 1.25rem;
   background: var(--fundoPreto);
   text-align: center;
   line-height: 1.6;
 }
 
 .sectionPratica h2 {
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: bold;
   color: var(--corTitulo);
 }
@@ -134,51 +186,51 @@
 .sectionPratica p {
   font-size: 1.25rem;
   color: var(--corParagrafo);
-  margin-bottom: 3rem;
+  margin-bottom: 3.125rem;
 }
 
 .cardsContainer {
   width: 100%;
-  max-width: 1100px;
+  max-width: 68.75rem;
   margin: auto;
   padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: clamp(20px, 5vw, 40px);
+  grid-template-columns: repeat(auto-fill, minmax(15.625rem, 1fr));
+  gap: clamp(1.25rem, 5vw, 2.5rem);
   justify-items: center;
 }
 
 .card {
   background: linear-gradient(135deg, #119fe3, #b9fbc0);
-  border-radius: 10px;
-  padding: 20px;
+  border-radius: 0.625rem;
+  padding: 1.25rem;
   width: 100%;
-  max-width: 500px;
+  max-width: 31.25rem;
   text-align: center;
   transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
     box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.625rem) scale(1.02);
+  box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.2);
 }
 
 .icon {
-  font-size: 50px;
+  font-size: 3.125rem;
 }
 
 .card h4 {
-  font-size: 21px;
+  font-size: 1.3125rem;
   font-weight: bold;
   color: #333;
-  margin-top: 15px;
+  margin-top: 0.9375rem;
 }
 
 .card p {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #393939;
-  margin-top: 5px;
+  margin-top: 0.3125rem;
   text-align: center;
 }
 
@@ -200,15 +252,15 @@
 
 .scrollToTopButton {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 1.25rem;
+  right: 1.25rem;
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 25px;
+  width: 3.125rem;
+  height: 3.125rem;
+  font-size: 1.5625rem;
   cursor: pointer;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
