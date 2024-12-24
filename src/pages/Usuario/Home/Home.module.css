@@ -21,7 +21,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(.3125rem);
+  backdrop-filter: blur(0.3125rem);
   z-index: 0;
 }
 
@@ -46,9 +46,9 @@
   color: var(--corParagrafo);
   font-size: 1.25rem;
   font-weight: bold;
-  padding: .9375rem 1.25rem;
+  padding: 0.9375rem 1.25rem;
   border: none;
-  border-radius: .3125rem;
+  border-radius: 0.3125rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   margin-top: 2.1875rem;
@@ -65,11 +65,11 @@
 
 /* ====================================================  Sesssão 02 -> Chamar atenção do Usuario */
 .sectionEngajamento {
-  border-top: .125rem solid var(--corTrasicaoBorda);
+  border-top: 0.125rem solid var(--corTrasicaoBorda);
   display: flex;
   justify-content: center;
   padding: 6.25rem;
-  background-image: linear-gradient(180deg, #3c3c3c 0%, #000000 22%);
+  background-image: linear-gradient(180deg, #3c3c3c 0%, var(--fundoPreto) 22%);
 }
 
 .engajamentoConteudo {
@@ -113,7 +113,7 @@
 .bannerVideo {
   max-width: 100%;
   max-height: 50rem;
-  border-radius: .625rem;
+  border-radius: 0.625rem;
 }
 
 @media (max-width: 1024px) {
@@ -132,7 +132,7 @@
   }
 
   .engajamentoTexto p {
-    font-size: .875rem;
+    font-size: 0.875rem;
   }
 
   .engajamentoVideo {
@@ -146,7 +146,7 @@
   }
 
   .engajamentoTexto p {
-    font-size: .75rem;
+    font-size: 0.75rem;
   }
 
   .bannerVideo {
@@ -160,7 +160,7 @@
   }
 
   .engajamentoTexto p {
-    font-size: .625rem;
+    font-size: 0.625rem;
   }
 
   .bannerVideo {
@@ -170,7 +170,7 @@
 
 /*  ========================================================================= Section 03  */
 .sectionPratica {
-  border-top: .125rem solid var(--corTrasicaoBorda);
+  border-top: 0.125rem solid var(--corTrasicaoBorda);
   padding: 4.375rem 1.25rem;
   background: var(--fundoPreto);
   text-align: center;
@@ -248,13 +248,88 @@
   animation: wiggle 0.3s ease-out;
 }
 
+/* ==========================================================================  FAQ*/
+.sectionFAQ {
+  border-top: 0.125rem solid var(--corTrasicaoBorda);
+  background-color: #121212;
+  padding: 50px 20px;
+  color: #fff;
+}
+
+.sectionFAQ h2 {
+  font-size: 40px;
+  text-align: center;
+  color: var(--corParagrafo);
+  margin-bottom: 50px;
+}
+
+.faqContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.faqItem {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.faqItem.active {
+  background-color: #292929;
+  transform: scale(1.02);
+}
+
+.faqQuestion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--corTitulo);
+  border-bottom: 1px solid #444;
+  transition: color 0.3s ease;
+}
+
+.faqQuestion:hover {
+  color: var(--corBotao);
+}
+
+.faqAnswer {
+  padding: 15px 20px;
+  font-size: 18px;
+  color: var(--corParagrafo);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faqItem.active .faqAnswer {
+  max-height: 500px;
+  padding: 15px 20px;
+}
+
+.faqItem .faqAnswer {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.faqItem.active .faqAnswer {
+  opacity: 1;
+}
+
 /* ============================================================================  Voltar para o Top */
 
 .scrollToTopButton {
   position: fixed;
   bottom: 1.25rem;
   right: 1.25rem;
-  background-color: #007bff;
+  background-color: var(--corBotao);
   color: white;
   border: none;
   border-radius: 50%;
@@ -266,7 +341,7 @@
 }
 
 .scrollToTopButton:hover {
-  background-color: #0056b3;
+  background-color: var(--hoverBotao);
 }
 
 .scrollToTopButton:active {

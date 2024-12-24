@@ -7,6 +7,7 @@ import { FaAngleDoubleUp } from "react-icons/fa";
 
 export default function Home() {
   const [showButton, setShowButton] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   // Função para monitorar a rolagem da página
   useEffect(() => {
@@ -31,6 +32,49 @@ export default function Home() {
       top: 0,
       behavior: "smooth",
     });
+  };
+
+  // Lista de perguntas frequentes
+  const faqItems = [
+    {
+      question: "O que é o DevStart?",
+      answer:
+        "O DevStart é uma plataforma totalmente gratuita, criada para ajudar você a iniciar na programação com conteúdos práticos, objetivos e voltados para diferentes níveis de aprendizado.",
+    },
+    {
+      question: "Preciso pagar para usar o DevStart?",
+      answer:
+        "Não! O DevStart é 100% gratuito e está comprometido em oferecer educação acessível e de qualidade para todos que desejam aprender programação.",
+    },
+    {
+      question: "Como lidar com dificuldades ao estudar?",
+      answer:
+        "Estudar programação pode ser desafiador, mas você não está sozinho! Use nossa comunidade para tirar dúvidas, revise os conteúdos no seu ritmo e lembre-se: errar é uma etapa importante do aprendizado.",
+    },
+    {
+      question: "Existe suporte para dúvidas específicas?",
+      answer:
+        "Sim! Além de nossos guias, você pode acessar nossa comunidade para receber ajuda de outros iniciantes e programadores experientes.",
+    },
+    {
+      question: "Como o DevStart ajuda na escolha da carreira?",
+      answer:
+        "Oferecemos conteúdos sobre diferentes áreas da programação, ajudando você a entender as possibilidades e escolher o caminho certo.",
+    },
+    {
+      question: "O que torna o DevStart diferente?",
+      answer:
+        "Nosso foco está em iniciantes, com conteúdos acessíveis e gratuitos, além de uma comunidade que valoriza o aprendizado colaborativo e o crescimento conjunto.",
+    },
+    {
+      question: "Quais são os próximos passos depois do DevStart?",
+      answer:
+        "Continue aprofundando seus estudos, participe de projetos práticos e comece a explorar oportunidades no mercado de tecnologia. O DevStart te ajuda a construir a base para o seu futuro!",
+    },
+  ];
+
+  const toggleAccordion = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
   };
 
   return (
@@ -154,6 +198,31 @@ export default function Home() {
                 projetos reais.
               </p>
             </div>
+          </div>
+        </section>
+
+        <section className={styles.sectionFAQ}>
+          <h2>Perguntas Frequentes</h2>
+          <div className={styles.faqContainer}>
+            {faqItems.map((item, index) => (
+              <div
+                key={index}
+                className={`${styles.faqItem} ${
+                  activeIndex === index ? styles.active : ""
+                }`}
+              >
+                <div
+                  className={styles.faqQuestion}
+                  onClick={() => toggleAccordion(index)}
+                >
+                  <span>{item.question}</span>
+                  <span>{activeIndex === index ? "-" : "+"}</span>
+                </div>
+                {activeIndex === index && (
+                  <div className={styles.faqAnswer}>{item.answer}</div>
+                )}
+              </div>
+            ))}
           </div>
         </section>
 
