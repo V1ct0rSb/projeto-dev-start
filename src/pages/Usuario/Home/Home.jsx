@@ -4,6 +4,7 @@ import AnimatedText from "../../../components/Animacao/AnimatedText";
 import VideoHome01 from "../../../assets/VideoHome01.mp4";
 import { useState, useEffect } from "react";
 import { FaAngleDoubleUp } from "react-icons/fa";
+import Footer from "../../../components/Footer/Footer";
 
 export default function Home() {
   const [showButton, setShowButton] = useState(false);
@@ -233,6 +234,8 @@ export default function Home() {
           </button>
         )}
       </main>
+
+      <Footer />
     </>
   );
 }
