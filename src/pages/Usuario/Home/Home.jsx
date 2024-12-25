@@ -87,7 +87,9 @@ export default function Home() {
           <div className={styles.animatedTextContainer}>
             <AnimatedText />
             <div className={styles.buttonIntroducao}>
-              <button>Mais Informações</button>
+              <a href="/MenuCursos" className={styles.botaoLink}>
+                Explorar Agora!!
+              </a>
             </div>
           </div>
         </section>

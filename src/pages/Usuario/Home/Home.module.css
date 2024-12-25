@@ -40,26 +40,31 @@
   font-size: 2.5rem;
 }
 
-/* Botão "Mais Informações" */
-.buttonIntroducao button {
+/* Botão "Explorar Agora" */
+.botaoLink {
+  display: inline-block;
   background-color: var(--corBotao);
   color: var(--corParagrafo);
   font-size: 1.25rem;
   font-weight: bold;
-  padding: 0.9375rem 1.25rem;
+  padding: 1rem 2rem;
   border: none;
   border-radius: 0.3125rem;
+  text-decoration: none;
+  text-align: center;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   margin-top: 2.1875rem;
+  box-shadow: 0 12px 25px #04a6f1b3;
 }
 
-.buttonIntroducao button:hover {
+.botaoLink:hover {
   background-color: var(--hoverBotao);
   transform: translateY(-0.1875rem);
+  box-shadow: 0 12px 25px #0389c7b3;
 }
 
-.buttonIntroducao button:active {
+.botaoLink:active {
   transform: translateY(0);
 }
 
