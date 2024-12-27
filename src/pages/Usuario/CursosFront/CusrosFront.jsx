@@ -39,20 +39,20 @@ const sections = [
           {
             title: "Marco Bruno HTML e CSS Feliz",
             thumbnail:
-              "https://img.youtube.com/vi/CZPa3-1BKnY/maxresdefault.jpg", // Thumbnail do vídeo
+              "https://img.youtube.com/vi/CZPa3-1BKnY/maxresdefault.jpg",
             link: "https://www.youtube.com/watch?v=CZPa3-1BKnY&list=PLirko8T4cEmzrH3jIJi7R7ufeqcpXYaLa&ab_channel=MarcoBruno", // Link do vídeo
           },
           {
             title: "Curso Completo de HTML e CSS",
             thumbnail:
-              "https://img.youtube.com/vi/Ejkb_YpuHWs/maxresdefault.jpg", // Thumbnail do vídeo
+              "https://img.youtube.com/vi/Ejkb_YpuHWs/maxresdefault.jpg",
             link: "https://www.youtube.com/watch?v=Ejkb_YpuHWs&list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n&ab_channel=CursoemV%C3%ADdeo", // Link do vídeo
           },
           {
-            title: "Curso completo de HTML !",
+            title: "Curso completo de HTML",
             thumbnail:
-              "https://img.youtube.com/vi/Fhy-5CtVkiM/maxresdefault.jpg", // Thumbnail do vídeo
-            link: "https://www.youtube.com/watch?v=Fhy-5CtVkiM&ab_channel=RafaellaBallerini", // Link do vídeo
+              "https://img.youtube.com/vi/Fhy-5CtVkiM/maxresdefault.jpg",
+            link: "https://www.youtube.com/watch?v=Fhy-5CtVkiM&ab_channel=RafaellaBallerini",
           },
         ],
       },
@@ -60,22 +60,19 @@ const sections = [
         name: "PRÁTICA",
         items: [
           {
-            title: "Marco Bruno HTML e CSS Feliz",
-            thumbnail:
-              "https://img.youtube.com/vi/CZPa3-1BKnY/maxresdefault.jpg", // Thumbnail do vídeo
-            link: "https://www.youtube.com/watch?v=CZPa3-1BKnY&list=PLirko8T4cEmzrH3jIJi7R7ufeqcpXYaLa&ab_channel=MarcoBruno", // Link do vídeo
+            title: "MDN Web Docs - HTML",
+            thumbnail: "https://via.placeholder.com/600x300?text=Prática",
+            link: "https://developer.mozilla.org/pt-BR/docs/Web/HTML",
           },
           {
-            title: "Curso Completo de HTML e CSS",
-            thumbnail:
-              "https://img.youtube.com/vi/Ejkb_YpuHWs/maxresdefault.jpg", // Thumbnail do vídeo
-            link: "https://www.youtube.com/watch?v=Ejkb_YpuHWs&list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n&ab_channel=CursoemV%C3%ADdeo", // Link do vídeo
+            title: "Codecademy - HTML",
+            thumbnail: "https://via.placeholder.com/600x300?text=Prática",
+            link: "https://www.codecademy.com/resources/docs/html",
           },
           {
-            title: "Curso completo de HTML !",
-            thumbnail:
-              "https://img.youtube.com/vi/Fhy-5CtVkiM/maxresdefault.jpg", // Thumbnail do vídeo
-            link: "https://www.youtube.com/watch?v=Fhy-5CtVkiM&ab_channel=RafaellaBallerini", // Link do vídeo
+            title: "html.com - HTML",
+            thumbnail: "https://via.placeholder.com/600x300?text=Prática",
+            link: "https://html.com/",
           },
         ],
       },
@@ -100,36 +97,33 @@ const sections = [
             link: "https://www.youtube.com/watch?v=Ejkb_YpuHWs&list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n&ab_channel=CursoemV%C3%ADdeo", // Link do vídeo
           },
           {
-            title: "Curso completo de HTML",
+            title: "Flexbox CSS",
             thumbnail:
-              "https://img.youtube.com/vi/Fhy-5CtVkiM/maxresdefault.jpg", // Thumbnail do vídeo
-            link: "https://www.youtube.com/watch?v=Fhy-5CtVkiM&ab_channel=RafaellaBallerini", // Link do vídeo
+              "https://img.youtube.com/vi/KbjLtEgmZ_E/maxresdefault.jpg", // Thumbnail do vídeo
+            link: "https://www.youtube.com/watch?v=KbjLtEgmZ_E&ab_channel=RafaellaBallerini", // Link do vídeo
           },
         ],
       },
-    //   {
-    //     name: "PRÁTICA",
-    //     items: [
-    //       {
-    //         title: "HTML: Linguagem de Marcação de Hipertexto",
-    //         thumbnail:
-    //           "https://developer.mozilla.org/static/img/opengraph-logo.5fb3e8f1a256.png",
-    //         link: "https://developer.mozilla.org/pt-BR/docs/Web/HTML",
-    //       },
-    //       {
-    //         title: "HTML: Linguagem de Marcação de Hipertexto",
-    //         thumbnail:
-    //           "https://developer.mozilla.org/static/img/opengraph-logo.5fb3e8f1a256.png",
-    //         link: "https://developer.mozilla.org/pt-BR/docs/Web/HTML",
-    //       },
-    //       {
-    //         title: "HTML: Linguagem de Marcação de Hipertexto",
-    //         thumbnail:
-    //           "https://developer.mozilla.org/static/img/opengraph-logo.5fb3e8f1a256.png",
-    //         link: "https://developer.mozilla.org/pt-BR/docs/Web/HTML",
-    //       },
-    //     ],
-    //   },
+      {
+        name: "PRÁTICA",
+        items: [
+          {
+            title: "HTML: Linguagem de Marcação de Hipertexto",
+            thumbnail: "https://via.placeholder.com/600x300?text=Prática",
+            link: "https://developer.mozilla.org/pt-BR/docs/Web/HTML",
+          },
+          {
+            title: "CSS: Folhas de Estilo em Cascata",
+            thumbnail: "https://via.placeholder.com/600x300?text=Prática",
+            link: "https://developer.mozilla.org/pt-BR/docs/Web/CSS",
+          },
+          {
+            title: "JavaScript: Linguagem de Programação",
+            thumbnail: "https://via.placeholder.com/600x300?text=Prática",
+            link: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript",
+          },
+        ],
+      },
     ],
   },
 ];
@@ -176,7 +170,7 @@ function CursosFront() {
                     <div
                       key={index}
                       className={styles.itemCard}
-                      onClick={() => window.open(item.link, "_blank")} // Abre o link ao clicar
+                      onClick={() => window.open(item.link, "_blank")}
                       role="button"
                       tabIndex={0}
                       onKeyDown={(e) =>

@@ -1,18 +1,16 @@
 .container {
   padding: 60px 150px;
-  background-color: var(--fundoPreto);
-  /* font-family: Arial, sans-serif; */
+  background-color: #1c1c1c; /* Cor de fundo preta */
 }
 
 .section {
-  /* border: 1px solid red; */
   margin-bottom: 20px;
 }
 
 .sectionTitle {
   font-size: 40px;
   font-weight: bold;
-  border-bottom: 2px solid var(--corTitulo);
+  border-bottom: 2px solid var(--corTitulo); /* Cor branca para o título */
   padding-bottom: 10px;
   margin-bottom: 20px;
   color: var(--corTitulo);
@@ -27,49 +25,48 @@
   font-size: 25px;
   font-weight: bold;
   margin-bottom: 15px;
-  color: var(--corParagrafo);
+  color: var(--corParagrafo); /* Cor cinza para os subtítulos */
 }
 
 .teste {
   margin: auto;
-  width: 1370px;
-  height: 200px;
-  margin-bottom: 120px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 70px;
 }
 
 .itemCard {
-  background-color: rgb(248, 236, 236);
-  border: 2px solid var(--corTrasicaoBorda);
+  background-color: #f8ecec; /* Fundo claro para os cards */
+  border: 2px solid var(--corTrasicaoBorda); /* Cor de borda */
   border-radius: 10px;
   text-align: center;
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
   cursor: pointer;
 }
 
 .itemCard:hover {
-  transform: scale(1.007);
+  transform: scale(1.02);
+  background-color: var(--hoverBotao);
+  transition: background 0.4s ease;
 }
 
 .itemThumbnail {
   margin: auto;
-  background-color: #eee;
-  max-width: 400px;
+  max-width: 100%;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  color: #555;
   margin-bottom: 10px;
   border-radius: 8px;
 }
 
 .itemTitle {
-  background-color: #d0d0d0;
+  background-color: #cbcbcb;
   padding: 10px;
   font-size: 18px;
   font-weight: bold;
@@ -78,7 +75,7 @@
 
 .arrow {
   position: absolute;
-  top: 70%;
+  top: 50%;
   transform: translateY(-50%);
   z-index: 1000;
   background: var(--corBotao);
@@ -92,11 +89,12 @@
   justify-content: center;
   cursor: pointer;
   opacity: 0.8;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
 }
 
 .arrow:hover {
   opacity: 1;
+  background-color: var(--hoverBotao); /* Azul mais escuro no hover */
 }
 
 .prev {
@@ -105,4 +103,73 @@
 
 .next {
   right: -55px;
+}
+
+/* Ajustes de responsividade */
+@media (max-width: 1024px) {
+  .container {
+    padding: 40px 100px;
+  }
+
+  .sectionTitle {
+    font-size: 35px;
+  }
+
+  .category {
+    padding: 0 30px;
+  }
+
+  .categoryTitle {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .sectionTitle {
+    font-size: 30px;
+  }
+
+  .categoryTitle {
+    font-size: 20px;
+  }
+
+  .arrow {
+    width: 35px;
+    height: 35px;
+  }
+
+  .prev {
+    left: -45px;
+  }
+
+  .next {
+    right: -45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 24px;
+  }
+
+  .categoryTitle {
+    font-size: 18px;
+  }
+
+  .arrow {
+    width: 30px;
+    height: 30px;
+  }
+
+  .prev {
+    left: -35px;
+  }
+
+  .next {
+    right: -35px;
+  }
 }
