@@ -6,6 +6,7 @@ import App from "./App.jsx";
 import Home from "./pages/Usuario/Home/Home.jsx";
 import "./styles/Global.css";
 import MenuCursos from "./pages/Usuario/MenuCursos/MenuCursos.jsx";
+import CusrosFront from "./pages/Usuario/CursosFront/CusrosFront.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/MenuCursos",
         element: <MenuCursos />,
+      },
+      {
+        path: "/CursosFront",
+        element: <CusrosFront />,
       },
     ],
   },

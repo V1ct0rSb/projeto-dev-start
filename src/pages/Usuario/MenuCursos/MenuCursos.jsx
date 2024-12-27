@@ -1,6 +1,7 @@
 import { FaCode, FaDatabase, FaCogs, FaCheckCircle } from "react-icons/fa";
 import NavbarHome from "../../../components/NavbarHome/NavbarHome";
 import styles from "./MenuCursos.module.css";
+import { Link } from "react-router-dom";
 
 const areas = [
   {
@@ -9,6 +10,7 @@ const areas = [
       "O Frontend é a parte da programação que lida com a interface com a qual o usuário interage. Aprenda sobre HTML, CSS, JavaScript, e frameworks como React, Angular, e Vue.",
     icon: <FaCode />,
     image: "https://via.placeholder.com/300x200?text=Frontend",
+    link: "/CursosFront",
   },
   {
     title: "Backend",
@@ -16,6 +18,7 @@ const areas = [
       "O Backend é responsável por garantir que a lógica do aplicativo funcione, lidando com bancos de dados, servidores e APIs. Tecnologias comuns incluem Node.js, Python, Ruby, e Java.",
     icon: <FaDatabase />,
     image: "https://via.placeholder.com/300x200?text=Backend",
+    link: "/backend",
   },
   {
     title: "DevOps",
@@ -23,6 +26,7 @@ const areas = [
       "DevOps foca em automação e integração contínua, garantindo que o desenvolvimento e a operação de software ocorram sem interrupções. Aprenda sobre ferramentas como Docker, Kubernetes e AWS.",
     icon: <FaCogs />,
     image: "https://via.placeholder.com/300x200?text=DevOps",
+    link: "/devops",
   },
   {
     title: "Test/QA",
@@ -30,6 +34,7 @@ const areas = [
       "Testes e QA garantem que o software seja confiável e funcione conforme esperado. Aprenda sobre testes unitários, integração e frameworks como Jest, Mocha e Selenium.",
     icon: <FaCheckCircle />,
     image: "https://via.placeholder.com/300x200?text=QA",
+    link: "/qa",
   },
 ];
 
@@ -55,12 +60,9 @@ function MenuCursos() {
             <div className={styles.content}>
               <h3 className={styles.areaTitle}>{area.title}</h3>
               <p className={styles.description}>{area.description}</p>
-              <button
-                className={styles.learnMoreBtn}
-                title={`Saiba mais sobre ${area.title}`}
-              >
+              <Link to={area.link} className={styles.learnMoreBtn}>
                 Aprenda Mais
-              </button>
+              </Link>
             </div>
           </div>
         ))}
