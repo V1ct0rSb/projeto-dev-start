@@ -1,7 +1,7 @@
-import { FaCode, FaDatabase, FaCogs, FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle, FaCode, FaCogs, FaDatabase } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import NavbarHome from "../../../components/NavbarHome/NavbarHome";
 import styles from "./MenuCursos.module.css";
-import { Link } from "react-router-dom";
 
 const areas = [
   {

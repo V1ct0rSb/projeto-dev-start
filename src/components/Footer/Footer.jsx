@@ -1,6 +1,6 @@
 import { FaInstagram } from "react-icons/fa";
-import { ImGithub } from "react-icons/im";
 import { FaDiscord } from "react-icons/fa6";
+import { ImGithub } from "react-icons/im";
 import styles from "./Footer.module.css";
 
 export default function Footer() {

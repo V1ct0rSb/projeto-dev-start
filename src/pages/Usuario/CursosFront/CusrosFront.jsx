@@ -1,10 +1,10 @@
-import PropTypes from "prop-types"; // Importação do pacote prop-types
+import PropTypes from "prop-types"; 
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 import NavbarHome from "../../../components/NavbarHome/NavbarHome";
 import styles from "./CursosFront.module.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 // Botões customizados para o carrossel
 const PrevArrow = ({ onClick }) => (

@@ -1,11 +1,11 @@
-import styles from "./NavbarHome.module.css";
 import { MdAccountCircle } from "react-icons/md";
 import { Link } from "react-router-dom";
 import logoPrincipal from "../../assets/logoPrincipal.png";
+import styles from "./NavbarHome.module.css";
 
-import { ImGithub } from "react-icons/im";
-import { GrInstagram } from "react-icons/gr";
 import { FaDiscord } from "react-icons/fa6";
+import { GrInstagram } from "react-icons/gr";
+import { ImGithub } from "react-icons/im";
 
 export default function NavbarHome() {
   return (
