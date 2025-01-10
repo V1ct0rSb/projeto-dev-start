@@ -7,6 +7,7 @@ import CusrosFront from "./pages/Usuario/CursosFront/CursosFront.jsx";
 import Home from "./pages/Usuario/Home/Home.jsx";
 import MenuCursos from "./pages/Usuario/MenuCursos/MenuCursos.jsx";
 import "./styles/Global.css";
+import LoginAdmin from "./pages/Admin/Login/LoginAdmin.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/CursosFront",
         element: <CusrosFront />,
+      },
+      {
+        path: "/LoginAdmin",
+        element: <LoginAdmin />,
       },
     ],
   },

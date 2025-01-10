@@ -29,7 +29,7 @@ export default function NavbarHome() {
       </nav>
 
       <div className={styles.loginIconHeader}>
-        <Link to="/LoginPaciente">
+        <Link to="/LoginAdmin">
           <MdAccountCircle className={styles.loginIcon} />
         </Link>
       </div>

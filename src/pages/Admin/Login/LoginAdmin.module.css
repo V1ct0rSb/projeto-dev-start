@@ -1,0 +1,155 @@
+:root {
+  --corBotao: #119fe3;
+  --hoverBotao: #0056b3;
+  --corTitulo: #f1f5f9;
+  --corParagrafo: #f1f5f9;
+  --corTrasicaoBorda: #5d5d5d;
+  --fundoPreto: #121212;
+  --glassBackground: rgba(255, 255, 255, 0.1);
+  --glassBorder: rgba(255, 255, 255, 0.3);
+  --warningColor: #ffcc00;
+}
+
+body {
+  margin: 0;
+  /* font-family: "Roboto", Arial, sans-serif; */
+  background: linear-gradient(135deg, #1f1f1f, #121212);
+  color: var(--corParagrafo);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 1rem;
+}
+
+.card {
+  background: var(--glassBackground);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid var(--glassBorder);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.warningBox {
+  animation: popIn 0.6s ease;
+}
+
+.warning {
+  font-size: 4rem;
+  color: var(--warningColor);
+}
+
+.title {
+  color: var(--corTitulo);
+  font-size: 30px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.paragraph {
+  color: var(--corParagrafo);
+  margin-bottom: 2rem;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.button {
+  background-color: var(--corBotao);
+  color: var(--corParagrafo);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background-color: var(--hoverBotao);
+  transform: translateY(-3px);
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--corTitulo);
+  text-align: left;
+}
+
+.input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--corTrasicaoBorda);
+  border-radius: 5px;
+  background-color: var(--fundoPreto);
+  color: var(--corParagrafo);
+  font-size: 1rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--corBotao);
+  box-shadow: 0 0 5px var(--corBotao);
+}
+
+.fadeIn {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.backButton {
+    background-color: transparent;
+    color: var(--corParagrafo);
+    border: 1px solid var(--corTrasicaoBorda);
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 1rem;
+  }
+  
+  .backButton:hover {
+    background-color: var(--corBotao);
+    color: white;
+    border-color: var(--hoverBotao);
+  }
+  
