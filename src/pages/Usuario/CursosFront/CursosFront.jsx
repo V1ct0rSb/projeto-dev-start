@@ -1,8 +1,16 @@
-import PropTypes from "prop-types"; 
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import PropTypes from "prop-types";
+import {
+  FaChevronLeft,
+  FaChevronRight,
+  FaCss3Alt,
+  FaHtml5,
+} from "react-icons/fa";
+import { RiGuideFill } from "react-icons/ri";
+import { SiJavascript } from "react-icons/si";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import logoGuiaAprendizado from "../../../assets/logoGuiaAprendizado.png";
 import NavbarHome from "../../../components/NavbarHome/NavbarHome";
 import styles from "./CursosFront.module.css";
 
@@ -31,6 +39,26 @@ NextArrow.propTypes = {
 // Dados para os vídeos e prática
 const sections = [
   {
+    title: "ROADMAP",
+    categories: [
+      {
+        name: "GUIA DE APRENDIZADO",
+        items: [
+          {
+            title: "Alura - TechGuide.sh",
+            thumbnail: logoGuiaAprendizado,
+            link: "https://techguide.sh/pt-BR/path/react/",
+          },
+          {
+            title: " Roadmap - Frontend Developer",
+            thumbnail: logoGuiaAprendizado,
+            link: "https://roadmap.sh/frontend",
+          },
+        ],
+      },
+    ],
+  },
+  {
     title: "HTML",
     categories: [
       {
@@ -57,21 +85,21 @@ const sections = [
         ],
       },
       {
-        name: "PRÁTICA",
+        name: "GUIA DE APRENDIZADO",
         items: [
           {
             title: "MDN Web Docs - HTML",
-            thumbnail: "https://via.placeholder.com/600x300?text=Prática",
+            thumbnail: logoGuiaAprendizado,
             link: "https://developer.mozilla.org/pt-BR/docs/Web/HTML",
           },
           {
             title: "Codecademy - HTML",
-            thumbnail: "https://via.placeholder.com/600x300?text=Prática",
+            thumbnail: logoGuiaAprendizado,
             link: "https://www.codecademy.com/resources/docs/html",
           },
           {
             title: "html.com - HTML",
-            thumbnail: "https://via.placeholder.com/600x300?text=Prática",
+            thumbnail: logoGuiaAprendizado,
             link: "https://html.com/",
           },
         ],
@@ -105,22 +133,70 @@ const sections = [
         ],
       },
       {
-        name: "PRÁTICA",
+        name: "GUIA DE APRENDIZADO",
         items: [
           {
-            title: "HTML: Linguagem de Marcação de Hipertexto",
-            thumbnail: "https://via.placeholder.com/600x300?text=Prática",
-            link: "https://developer.mozilla.org/pt-BR/docs/Web/HTML",
+            title: "W3Schools - CSS Tutorial",
+            thumbnail: logoGuiaAprendizado,
+            link: "https://www.w3schools.com/css/",
           },
           {
             title: "CSS: Folhas de Estilo em Cascata",
-            thumbnail: "https://via.placeholder.com/600x300?text=Prática",
+            thumbnail: logoGuiaAprendizado,
             link: "https://developer.mozilla.org/pt-BR/docs/Web/CSS",
           },
           {
-            title: "JavaScript: Linguagem de Programação",
-            thumbnail: "https://via.placeholder.com/600x300?text=Prática",
+            title: "Game - Flexbox Froggy",
+            thumbnail: logoGuiaAprendizado,
+            link: "https://flexboxfroggy.com/#pt-br",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "JavaScript",
+    categories: [
+      {
+        name: "VÍDEOS",
+        items: [
+          {
+            title: "Curso Grátis de JavaScript Moderno",
+            thumbnail:
+              "https://img.youtube.com/vi/BXqUH86F-kA/maxresdefault.jpg", 
+            link: "https://www.youtube.com/watch?v=BXqUH86F-kA&list=PLntvgXM11X6pi7mW0O4ZmfUI1xDSIbmTm&ab_channel=CursoemV%C3%ADdeo", // Link do vídeo
+          },
+          {
+            title: "Desafios JavaScript",
+            thumbnail:
+              "https://img.youtube.com/vi/bXim6-jCflk/maxresdefault.jpg", 
+            link: "https://www.youtube.com/watch?v=bXim6-jCflk&list=PLz_pSrQW_5xJexe74z50HXLCkYDKfks8S&ab_channel=FabioBergmann", // Link do vídeo
+          },
+          {
+            title: "Curso JavaScript",
+            thumbnail:
+              "https://img.youtube.com/vi/TkD0QMyBa28/maxresdefault.jpg", 
+            link: "https://www.youtube.com/watch?v=TkD0QMyBa28&list=PLnDvRpP8BneysKU8KivhnrVaKpILD3gZ6&ab_channel=MatheusBattisti-HoradeCodar", // Link do vídeo
+          },
+        ],
+      },
+      {
+        name: "GUIA DE APRENDIZADO",
+        items: [
+          {
+            title: "MDN Web Docs - JavaScript",
+            thumbnail: logoGuiaAprendizado,
             link: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript",
+          },
+          {
+            title: "W3Schools - JavaScript",
+            thumbnail: logoGuiaAprendizado,
+            link: "https://developer.mozilla.org/pt-BR/docs/Web/CSShttps://www.w3schools.com/js/",
+          },
+          {
+            title: "Alura - JavaScript",
+            thumbnail: logoGuiaAprendizado,
+            link: "https://www.alura.com.br/artigos/javascript",
           },
         ],
       },
@@ -161,7 +237,17 @@ function CursosFront() {
       <div className={styles.container}>
         {sections.map((section) => (
           <div key={section.title} className={styles.section}>
-            <h2 className={styles.sectionTitle}>{section.title}</h2>
+            <h2 className={styles.sectionTitle}>
+              {section.title === "ROADMAP" && (
+                <RiGuideFill className={styles.icon} />
+              )}
+              {section.title === "HTML" && <FaHtml5 className={styles.icon} />}
+              {section.title === "CSS" && <FaCss3Alt className={styles.icon} />}
+              {section.title === "JavaScript" && (
+                <SiJavascript className={styles.icon} />
+              )}
+              {section.title}
+            </h2>
             {section.categories.map((category) => (
               <div key={category.name} className={styles.category}>
                 <h3 className={styles.categoryTitle}>{category.name}</h3>

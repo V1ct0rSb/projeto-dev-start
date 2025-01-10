@@ -1,5 +1,9 @@
 import { FaCheckCircle, FaCode, FaCogs, FaDatabase } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import logoBackEnd from "../../../assets/logoBackEnd.png";
+import logoDevOps from "../../../assets/logoDevOps.png";
+import logoFrontEnd from "../../../assets/logoFrontEnd.png";
+import logoQA from "../../../assets/logoQA.png";
 import NavbarHome from "../../../components/NavbarHome/NavbarHome";
 import styles from "./MenuCursos.module.css";
 
@@ -7,33 +11,33 @@ const areas = [
   {
     title: "Frontend",
     description:
-      "O Frontend é a parte da programação que lida com a interface com a qual o usuário interage. Aprenda sobre HTML, CSS, JavaScript, e frameworks como React, Angular, e Vue.",
+      "O Frontend cuida da interface visual que o usuário utiliza. Envolve HTML, CSS, JavaScript e frameworks como Angular, React e Vue.",
     icon: <FaCode />,
-    image: "https://via.placeholder.com/300x200?text=Frontend",
+    image: logoFrontEnd,
     link: "/CursosFront",
   },
   {
     title: "Backend",
     description:
-      "O Backend é responsável por garantir que a lógica do aplicativo funcione, lidando com bancos de dados, servidores e APIs. Tecnologias comuns incluem Node.js, Python, Ruby, e Java.",
+      "O Backend trata da lógica e dos dados que dão suporte ao sistema, usando tecnologias como Node.js, Python e Java.",
     icon: <FaDatabase />,
-    image: "https://via.placeholder.com/300x200?text=Backend",
+    image: logoBackEnd,
     link: "/backend",
   },
   {
     title: "DevOps",
     description:
-      "DevOps foca em automação e integração contínua, garantindo que o desenvolvimento e a operação de software ocorram sem interrupções. Aprenda sobre ferramentas como Docker, Kubernetes e AWS.",
+      "DevOps une desenvolvimento e operações com automação. Ferramentas populares incluem Docker, Kubernetes e AWS.",
     icon: <FaCogs />,
-    image: "https://via.placeholder.com/300x200?text=DevOps",
+    image: logoDevOps,
     link: "/devops",
   },
   {
     title: "Test/QA",
     description:
-      "Testes e QA garantem que o software seja confiável e funcione conforme esperado. Aprenda sobre testes unitários, integração e frameworks como Jest, Mocha e Selenium.",
+      "Testes garantem que o software funcione bem. Aprenda sobre testes unitários, integração e ferramentas como Selenium.",
     icon: <FaCheckCircle />,
-    image: "https://via.placeholder.com/300x200?text=QA",
+    image: logoQA,
     link: "/qa",
   },
 ];

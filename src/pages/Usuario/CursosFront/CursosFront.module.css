@@ -1,6 +1,6 @@
 .container {
   padding: 60px 150px;
-  background-color: #1c1c1c; /* Cor de fundo preta */
+  background-color: #1c1c1c;
 }
 
 .section {
@@ -10,7 +10,7 @@
 .sectionTitle {
   font-size: 40px;
   font-weight: bold;
-  border-bottom: 2px solid var(--corTitulo); /* Cor branca para o título */
+  border-bottom: 2px solid var(--corTitulo);
   padding-bottom: 10px;
   margin-bottom: 20px;
   color: var(--corTitulo);
@@ -25,7 +25,7 @@
   font-size: 25px;
   font-weight: bold;
   margin-bottom: 15px;
-  color: var(--corParagrafo); /* Cor cinza para os subtítulos */
+  color: var(--corParagrafo);
 }
 
 .teste {
@@ -36,8 +36,8 @@
 }
 
 .itemCard {
-  background-color: #f8ecec; /* Fundo claro para os cards */
-  border: 2px solid var(--corTrasicaoBorda); /* Cor de borda */
+  background-color: #f8ecec;
+  border: 2px solid var(--corTrasicaoBorda);
   border-radius: 10px;
   text-align: center;
   padding: 10px;
@@ -94,7 +94,7 @@
 
 .arrow:hover {
   opacity: 1;
-  background-color: var(--hoverBotao); /* Azul mais escuro no hover */
+  background-color: var(--hoverBotao);
 }
 
 .prev {
@@ -103,6 +103,13 @@
 
 .next {
   right: -55px;
+}
+
+.icon {
+  font-size: 40px;
+  margin-right: 15px;
+  vertical-align: middle;
+  margin-bottom: 10px;
 }
 
 /* Ajustes de responsividade */

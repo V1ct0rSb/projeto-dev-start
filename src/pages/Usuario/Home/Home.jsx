@@ -1,10 +1,10 @@
-import styles from "./Home.module.css";
-import NavbarHome from "../../../components/NavbarHome/NavbarHome";
-import AnimatedText from "../../../components/Animacao/AnimatedText";
-import VideoHome01 from "../../../assets/VideoHome01.mp4";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FaAngleDoubleUp } from "react-icons/fa";
+import VideoHome01 from "../../../assets/VideoHome01.mp4";
+import AnimatedText from "../../../components/Animacao/AnimatedText";
 import Footer from "../../../components/Footer/Footer";
+import NavbarHome from "../../../components/NavbarHome/NavbarHome";
+import styles from "./Home.module.css";
 
 export default function Home() {
   const [showButton, setShowButton] = useState(false);
@@ -40,37 +40,37 @@ export default function Home() {
     {
       question: "O que é o DevStart?",
       answer:
-        "O DevStart é uma plataforma totalmente gratuita, criada para ajudar você a iniciar na programação com conteúdos práticos, objetivos e voltados para diferentes níveis de aprendizado.",
+        "O DevStart é uma plataforma gratuita, projetada para guiar você nos primeiros passos na programação. Reunimos conteúdos práticos, objetivos e acessíveis para diferentes níveis de aprendizado.",
     },
     {
       question: "Preciso pagar para usar o DevStart?",
       answer:
-        "Não! O DevStart é 100% gratuito e está comprometido em oferecer educação acessível e de qualidade para todos que desejam aprender programação.",
+        "Não! O DevStart é completamente gratuito e comprometido em tornar a educação em tecnologia acessível para todos.",
     },
     {
-      question: "Como lidar com dificuldades ao estudar?",
+      question: "Como superar dificuldades ao estudar programação?",
       answer:
-        "Estudar programação pode ser desafiador, mas você não está sozinho! Use nossa comunidade para tirar dúvidas, revise os conteúdos no seu ritmo e lembre-se: errar é uma etapa importante do aprendizado.",
+        "Aprender programação pode ser desafiador, mas faz parte do processo. Recomendamos revisar os conteúdos no seu ritmo, participar de nossa comunidade para tirar dúvidas e lembrar que errar é essencial para o aprendizado.",
     },
     {
-      question: "Existe suporte para dúvidas específicas?",
+      question: "Posso obter ajuda para dúvidas específicas?",
       answer:
-        "Sim! Além de nossos guias, você pode acessar nossa comunidade para receber ajuda de outros iniciantes e programadores experientes.",
+        "Claro! Além de nossos materiais, você pode acessar a comunidade DevStart para trocar experiências e receber suporte de outros estudantes e programadores.",
     },
     {
-      question: "Como o DevStart ajuda na escolha da carreira?",
+      question: "Como o DevStart pode ajudar na escolha da minha carreira?",
       answer:
-        "Oferecemos conteúdos sobre diferentes áreas da programação, ajudando você a entender as possibilidades e escolher o caminho certo.",
+        "Oferecemos conteúdos que exploram diferentes áreas da programação, ajudando você a descobrir suas preferências e a escolher o caminho certo no universo da tecnologia.",
     },
     {
-      question: "O que torna o DevStart diferente?",
+      question: "O que diferencia o DevStart de outras plataformas?",
       answer:
-        "Nosso foco está em iniciantes, com conteúdos acessíveis e gratuitos, além de uma comunidade que valoriza o aprendizado colaborativo e o crescimento conjunto.",
+        "Nosso foco está em iniciantes, oferecendo materiais acessíveis, gratuitos e uma comunidade que valoriza a troca de conhecimento e o aprendizado colaborativo. No entanto, programadores de outros níveis também são bem-vindos para explorar, revisar conceitos e expandir suas habilidades.",
     },
     {
-      question: "Quais são os próximos passos depois do DevStart?",
+      question: "Quais são os próximos passos após usar o DevStart?",
       answer:
-        "Continue aprofundando seus estudos, participe de projetos práticos e comece a explorar oportunidades no mercado de tecnologia. O DevStart te ajuda a construir a base para o seu futuro!",
+        "Depois de construir uma base sólida, avance em seus estudos, participe de projetos práticos e explore oportunidades no mercado de tecnologia. O DevStart estará sempre aqui para apoiar sua jornada!",
     },
   ];
 
@@ -97,40 +97,42 @@ export default function Home() {
         <section className={styles.sectionEngajamento}>
           <div className={styles.engajamentoConteudo}>
             <div className={styles.engajamentoTexto}>
-              <h2>Bem-vindo ao DevStart: Comece Sua Jornada na Programação!</h2>
+              <h2>
+                Bem-vindo ao DevStart: Aprenda Programação de Forma Simples e
+                Eficiente!
+              </h2>
               <p>
-                O <strong>DevStart</strong> é a plataforma ideal para quem está
-                começando na programação. Aqui, você encontra:
+                <strong>DevStart</strong> é a plataforma criada para quem está
+                dando os primeiros passos no mundo da programação. Aqui, você
+                encontra:
                 <ul>
-                  <li>Dicas de cursos gratuitos para aprender do zero.</li>
+                  <li>Vídeos do YouTube explicativos e didáticos.</li>
+                  <li>Cursos gratuitos para aprender programação do zero.</li>
+                  <li>Links para sites confiáveis com conteúdo educativo.</li>
                   <li>
-                    Conteúdo educacional prático, pensado para iniciantes.
-                  </li>
-                  <li>
-                    Orientação clara para encontrar o melhor caminho no universo
-                    da tecnologia.
+                    Dicas práticas para facilitar sua jornada de aprendizado.
                   </li>
                 </ul>
-                <p>
-                  Sabemos que o começo pode parecer desafiador, mas você não
-                  está sozinho nessa jornada. Nossa missão é orientar, educar e
-                  inspirar futuros programadores, mostrando que todos têm a
-                  capacidade de alcançar seus objetivos com dedicação e as
-                  ferramentas certas.
-                </p>
-                <p>
-                  Seja para criar seu próprio site, desenvolver aplicativos ou
-                  entender os conceitos fundamentais da programação, o{" "}
-                  <strong>DevStart</strong> está aqui para guiá-lo. Tudo isso de
-                  forma simples, gratuita e com o objetivo de ajudar você a
-                  crescer e se destacar
-                </p>
-                <br />
+              </p>
+              <p>
+                Sabemos que começar pode ser desafiador, mas você não precisa
+                enfrentar isso sozinho. Nossa missão é reunir recursos
+                didáticos, confiáveis e gratuitos para ajudar você a superar
+                obstáculos e alcançar seus objetivos.
+              </p>
+              <p>
+                Seja para criar um site, desenvolver aplicativos ou entender os
+                fundamentos da programação, o <strong>DevStart</strong> está
+                aqui para simplificar sua trajetória e inspirar você a crescer.
+              </p>
+              <br />
+              <p>
                 <strong>
                   DevStart: Seu ponto de partida na programação! 🚀
                 </strong>
               </p>
             </div>
+
             <div className={styles.engajamentoVideo}>
               <video autoPlay loop muted className={styles.bannerVideo}>
                 <source src={VideoHome01} type="video/mp4" />
@@ -162,7 +164,7 @@ export default function Home() {
               <h4>Estude com objetivos claros</h4>
               <p>
                 Saber exatamente o que você quer alcançar ajuda a manter o foco
-                e a motivação.
+                e a motivação. Defina metas claras e acompanhe seu progresso.
               </p>
             </div>
 
@@ -171,7 +173,7 @@ export default function Home() {
               <h4>Pratique no seu tempo</h4>
               <p>
                 Adapte o ritmo de aprendizado às suas necessidades e aproveite
-                cada momento ao máximo.
+                cada momento ao máximo. A consistência é a chave para o sucesso.
               </p>
             </div>
 
@@ -198,7 +200,7 @@ export default function Home() {
               <h4>Integre teoria com prática</h4>
               <p>
                 Não pule os conceitos, mas sempre aplique o que aprender em
-                projetos reais.
+                projetos reais. A teoria e a prática andam juntas.
               </p>
             </div>
           </div>
