@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useRef } from "react";
 import {
   FaChevronLeft,
   FaChevronRight,
@@ -14,7 +15,6 @@ import logoGuiaAprendizado from "../../../assets/logoGuiaAprendizado.png";
 import NavbarHome from "../../../components/NavbarHome/NavbarHome";
 import styles from "./CursosFront.module.css";
 
-// Botões customizados para o carrossel
 const PrevArrow = ({ onClick }) => (
   <button className={`${styles.arrow} ${styles.prev}`} onClick={onClick}>
     <FaChevronLeft />
@@ -27,7 +27,6 @@ const NextArrow = ({ onClick }) => (
   </button>
 );
 
-// Validação de propriedades para PrevArrow e NextArrow
 PrevArrow.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
@@ -36,7 +35,6 @@ NextArrow.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
 
-// Dados para os vídeos e prática
 const sections = [
   {
     title: "ROADMAP",
@@ -163,19 +161,19 @@ const sections = [
           {
             title: "Curso Grátis de JavaScript Moderno",
             thumbnail:
-              "https://img.youtube.com/vi/BXqUH86F-kA/maxresdefault.jpg", 
+              "https://img.youtube.com/vi/BXqUH86F-kA/maxresdefault.jpg",
             link: "https://www.youtube.com/watch?v=BXqUH86F-kA&list=PLntvgXM11X6pi7mW0O4ZmfUI1xDSIbmTm&ab_channel=CursoemV%C3%ADdeo", // Link do vídeo
           },
           {
             title: "Desafios JavaScript",
             thumbnail:
-              "https://img.youtube.com/vi/bXim6-jCflk/maxresdefault.jpg", 
+              "https://img.youtube.com/vi/bXim6-jCflk/maxresdefault.jpg",
             link: "https://www.youtube.com/watch?v=bXim6-jCflk&list=PLz_pSrQW_5xJexe74z50HXLCkYDKfks8S&ab_channel=FabioBergmann", // Link do vídeo
           },
           {
             title: "Curso JavaScript",
             thumbnail:
-              "https://img.youtube.com/vi/TkD0QMyBa28/maxresdefault.jpg", 
+              "https://img.youtube.com/vi/TkD0QMyBa28/maxresdefault.jpg",
             link: "https://www.youtube.com/watch?v=TkD0QMyBa28&list=PLnDvRpP8BneysKU8KivhnrVaKpILD3gZ6&ab_channel=MatheusBattisti-HoradeCodar", // Link do vídeo
           },
         ],
@@ -205,6 +203,15 @@ const sections = [
 ];
 
 function CursosFront() {
+  const sectionRefs = useRef({});
+
+  const handleScrollToSection = (sectionTitle) => {
+    const sectionElement = sectionRefs.current[sectionTitle];
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const sliderSettings = {
     dots: false,
     infinite: true,
@@ -214,29 +221,33 @@ function CursosFront() {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
+      { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+      { breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1 } },
     ],
   };
 
   return (
     <>
       <NavbarHome />
+      <div className={styles.menu}>
+        {sections.map((section) => (
+          <button
+            key={section.title}
+            className={styles.menuItem}
+            onClick={() => handleScrollToSection(section.title)}
+          >
+            {section.title}
+          </button>
+        ))}
+      </div>
       <div className={styles.container}>
         {sections.map((section) => (
-          <div key={section.title} className={styles.section}>
+          <div
+            key={section.title}
+            id={section.title}
+            className={styles.section}
+            ref={(el) => (sectionRefs.current[section.title] = el)}
+          >
             <h2 className={styles.sectionTitle}>
               {section.title === "ROADMAP" && (
                 <RiGuideFill className={styles.icon} />
@@ -251,7 +262,7 @@ function CursosFront() {
             {section.categories.map((category) => (
               <div key={category.name} className={styles.category}>
                 <h3 className={styles.categoryTitle}>{category.name}</h3>
-                <Slider {...sliderSettings} className={styles.teste}>
+                <Slider {...sliderSettings}>
                   {category.items.map((item, index) => (
                     <div
                       key={index}
