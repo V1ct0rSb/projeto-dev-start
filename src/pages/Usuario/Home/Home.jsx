@@ -9,6 +9,7 @@ import styles from "./Home.module.css";
 export default function Home() {
   const [showButton, setShowButton] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
+  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
 
   // Função para monitorar a rolagem da página
   useEffect(() => {
@@ -34,6 +35,34 @@ export default function Home() {
       behavior: "smooth",
     });
   };
+
+  // Lista de depoimentos
+  const testimonials = [
+    {
+      name: "João Silva",
+      text: "O DevStart foi essencial para meus primeiros passos na programação. Conteúdos claros e objetivos!",
+    },
+    {
+      name: "Maria Oliveira",
+      text: "Plataforma incrível! Cursos bem estruturados e uma comunidade muito acolhedora.",
+    },
+    {
+      name: "Carlos Pereira",
+      text: "Com o DevStart, aprendi programação de forma prática e divertida. Recomendo!",
+    },
+    {
+      name: "Ana Costa",
+      text: "Ótima para iniciantes! A comunidade oferece um suporte excepcional para tirar dúvidas.",
+    },
+    {
+      name: "Pedro Santos",
+      text: "O DevStart transformou minha jornada na programação. Didática perfeita para quem está começando!",
+    },
+    {
+      name: "Laura Mendes",
+      text: "Aprendi muito em pouco tempo. A plataforma é intuitiva e os instrutores são excelentes!",
+    },
+  ];
 
   // Lista de perguntas frequentes
   const faqItems = [
@@ -77,6 +106,27 @@ export default function Home() {
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
+
+  const nextTestimonial = () => {
+    setCurrentTestimonialIndex(
+      (prevIndex) => (prevIndex + 1) % testimonials.length
+    );
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonialIndex(
+      (prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length
+    );
+  };
+
+  // useEffect para passar automaticamente pelos depoimentos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextTestimonial();
+    }, 4000); // Muda o depoimento a cada 5 segundos
+
+    return () => clearInterval(interval);
+  }, [currentTestimonialIndex]);
 
   return (
     <>
@@ -228,6 +278,30 @@ export default function Home() {
                 )}
               </div>
             ))}
+          </div>
+        </section>
+
+        <section className={styles.sectionTestimonials}>
+          <h2>O que nossos usuários dizem</h2>
+          <div className={styles.testimonialContainer}>
+            <div className={styles.testimonial}>
+              <p>{testimonials[currentTestimonialIndex].text}</p>
+              <h4>- {testimonials[currentTestimonialIndex].name}</h4>
+            </div>
+            <div className={styles.navigationButtons}>
+              <button
+                onClick={prevTestimonial}
+                className={styles.testimonialButton}
+              >
+                ❮
+              </button>
+              <button
+                onClick={nextTestimonial}
+                className={styles.testimonialButton}
+              >
+                ❯
+              </button>
+            </div>
           </div>
         </section>
 

@@ -259,7 +259,7 @@
 /* ==========================================================================  FAQ*/
 .sectionFAQ {
   border-top: 0.125rem solid var(--corTrasicaoBorda);
-  background-color: #121212;
+  background-color: var(--fundoPreto);
   padding: 50px 20px;
   color: #fff;
 }
@@ -329,6 +329,90 @@
 
 .faqItem.active .faqAnswer {
   opacity: 1;
+}
+
+/* ============================================================================ carrosel  */
+
+.sectionTestimonials {
+  padding: 60px 20px;
+  background-color: var(--fundoPreto);
+  color: #ffffff;
+  text-align: center;
+  border-top: 0.125rem solid var(--corTrasicaoBorda);
+}
+
+.sectionTestimonials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: var(--corTitulo);
+}
+
+.testimonialContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 43.75rem;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 0.9375rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonialContainer:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+}
+
+.testimonial {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--corParagrafo);
+}
+
+.testimonial h4 {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: var(--corTitulo);
+}
+
+.navigationButtons {
+  display: flex;
+  justify-content: center;
+  gap: 0.9375rem;
+  margin-top: 1.5rem;
+}
+
+.testimonialButton {
+  background: none;
+  border: 0.125rem solid var(--corBotao);
+  border-radius: 50%;
+  width: 3.125rem;
+  height: 3.125rem;
+  font-size: 1.5rem;
+  color: var(--corBotao);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.testimonialButton:hover {
+  background: var(--hoverBotao);
+  color: var(--corParagrafo);
+  transform: scale(1.1);
+}
+
+.testimonialButton:active {
+  transform: scale(0.95);
+  background: var(--hoverBotao);
 }
 
 /* ============================================================================  Voltar para o Top */
