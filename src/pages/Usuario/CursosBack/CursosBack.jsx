@@ -3,18 +3,17 @@ import { useRef } from "react";
 import {
   FaChevronLeft,
   FaChevronRight,
-  FaCss3Alt,
-  FaHtml5,
+  FaDatabase,
+  FaNodeJs,
 } from "react-icons/fa";
 import { FaComputer } from "react-icons/fa6";
-import { RiGuideFill } from "react-icons/ri";
-import { SiJavascript } from "react-icons/si";
+import { RiGuideFill, RiJavaLine } from "react-icons/ri";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import logoGuiaAprendizado from "../../../assets/logoGuiaAprendizado.png";
 import NavbarHome from "../../../components/NavbarHome/NavbarHome";
-import styles from "./CursosFront.module.css";
+import styles from "./CursosBack.module.css";
 
 const PrevArrow = ({ onClick }) => (
   <button className={`${styles.arrow} ${styles.prev}`} onClick={onClick}>
@@ -46,40 +45,45 @@ const sections = [
           {
             title: "Alura - TechGuide.sh",
             thumbnail: logoGuiaAprendizado,
-            link: "https://techguide.sh/pt-BR/path/react/",
+            link: "https://techguide.sh/",
           },
           {
-            title: " Roadmap - Frontend Developer",
+            title: "Roadmap - Backend Developer",
             thumbnail: logoGuiaAprendizado,
-            link: "https://roadmap.sh/frontend",
+            link: "https://roadmap.sh/backend",
+          },
+          {
+            title: "Trilha.Info - Backend",
+            thumbnail: logoGuiaAprendizado,
+            link: "https://www.trilha.info/roadmap/backend",
           },
         ],
       },
     ],
   },
   {
-    title: "Html",
+    title: "Node.js",
     categories: [
       {
         name: "VÍDEOS",
         items: [
           {
-            title: "Marco Bruno HTML e CSS Feliz",
+            title: "Como sair do ZERO em Node.js",
             thumbnail:
-              "https://img.youtube.com/vi/CZPa3-1BKnY/maxresdefault.jpg",
-            link: "https://www.youtube.com/watch?v=CZPa3-1BKnY&list=PLirko8T4cEmzrH3jIJi7R7ufeqcpXYaLa&ab_channel=MarcoBruno", // Link do vídeo
+              "https://img.youtube.com/vi/hHM-hr9q4mo/maxresdefault.jpg",
+            link: "https://www.youtube.com/watch?v=hHM-hr9q4mo&ab_channel=Rocketseat",
           },
           {
-            title: "Curso Completo de HTML e CSS",
+            title: "Node.js // Dicionário do Programador",
             thumbnail:
-              "https://img.youtube.com/vi/Ejkb_YpuHWs/maxresdefault.jpg",
-            link: "https://www.youtube.com/watch?v=Ejkb_YpuHWs&list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n&ab_channel=CursoemV%C3%ADdeo", // Link do vídeo
+              "https://img.youtube.com/vi/vYekSMBCCiM/maxresdefault.jpg",
+            link: "https://www.youtube.com/watch?v=vYekSMBCCiM&ab_channel=C%C3%B3digoFonteTV",
           },
           {
-            title: "Curso completo de HTML",
+            title: "Criando aplicação NODE JS do ZERO",
             thumbnail:
-              "https://img.youtube.com/vi/Fhy-5CtVkiM/maxresdefault.jpg",
-            link: "https://www.youtube.com/watch?v=Fhy-5CtVkiM&ab_channel=RafaellaBallerini",
+              "https://img.youtube.com/vi/GVF--Rl3bP4/maxresdefault.jpg",
+            link: "https://www.youtube.com/watch?v=GVF--Rl3bP4&ab_channel=FernandaKipper%7CDev",
           },
         ],
       },
@@ -87,47 +91,47 @@ const sections = [
         name: "GUIA DE APRENDIZADO",
         items: [
           {
-            title: "MDN Web Docs - HTML",
+            title: "Node.js Documentation",
             thumbnail: logoGuiaAprendizado,
-            link: "https://developer.mozilla.org/pt-BR/docs/Web/HTML",
+            link: "https://nodejs.org/en/docs/",
           },
           {
-            title: "Codecademy - HTML",
+            title: "W3Schools - Node.js",
             thumbnail: logoGuiaAprendizado,
-            link: "https://www.codecademy.com/resources/docs/html",
+            link: "https://www.w3schools.com/nodejs/",
           },
           {
-            title: "html.com - HTML",
+            title: "Alura - Node.js",
             thumbnail: logoGuiaAprendizado,
-            link: "https://html.com/",
+            link: "https://www.alura.com.br/artigos/node-js",
           },
         ],
       },
     ],
   },
   {
-    title: "Css",
+    title: "Banco de Dados",
     categories: [
       {
         name: "VÍDEOS",
         items: [
           {
-            title: "Marco Bruno HTML e CSS Feliz",
+            title: "Guanabara - Curso MySQL",
             thumbnail:
-              "https://img.youtube.com/vi/CZPa3-1BKnY/maxresdefault.jpg", // Thumbnail do vídeo
-            link: "https://www.youtube.com/watch?v=CZPa3-1BKnY&list=PLirko8T4cEmzrH3jIJi7R7ufeqcpXYaLa&ab_channel=MarcoBruno", // Link do vídeo
+              "https://img.youtube.com/vi/Ofktsne-utM/maxresdefault.jpg",
+            link: "https://youtu.be/Ofktsne-utM?list=PL4Sl6eAbMK7RU3OL2bbB_R--iwj3QFqLA",
           },
           {
-            title: "Curso Completo de HTML e CSS",
+            title: "SQL // Dicionário do Programador",
             thumbnail:
-              "https://img.youtube.com/vi/Ejkb_YpuHWs/maxresdefault.jpg", // Thumbnail do vídeo
-            link: "https://www.youtube.com/watch?v=Ejkb_YpuHWs&list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n&ab_channel=CursoemV%C3%ADdeo", // Link do vídeo
+              "https://img.youtube.com/vi/kMznyI7r2Tc/maxresdefault.jpg",
+            link: "https://www.youtube.com/watch?v=kMznyI7r2Tc&ab_channel=C%C3%B3digoFonteTV",
           },
           {
-            title: "Flexbox CSS",
+            title: "Curso SQL Completo",
             thumbnail:
-              "https://img.youtube.com/vi/KbjLtEgmZ_E/maxresdefault.jpg", // Thumbnail do vídeo
-            link: "https://www.youtube.com/watch?v=KbjLtEgmZ_E&ab_channel=RafaellaBallerini", // Link do vídeo
+              "https://img.youtube.com/vi/rX2I7OjLqWE/maxresdefault.jpg",
+            link: "https://youtu.be/rX2I7OjLqWE",
           },
         ],
       },
@@ -135,47 +139,47 @@ const sections = [
         name: "GUIA DE APRENDIZADO",
         items: [
           {
-            title: "W3Schools - CSS Tutorial",
+            title: "MongoDB Documentation",
             thumbnail: logoGuiaAprendizado,
-            link: "https://www.w3schools.com/css/",
+            link: "https://docs.mongodb.com/",
           },
           {
-            title: "CSS: Folhas de Estilo em Cascata",
+            title: "PostgreSQL Documentation",
             thumbnail: logoGuiaAprendizado,
-            link: "https://developer.mozilla.org/pt-BR/docs/Web/CSS",
+            link: "https://www.postgresql.org/docs/",
           },
           {
-            title: "Game - Flexbox Froggy",
+            title: "MySQL Documentation",
             thumbnail: logoGuiaAprendizado,
-            link: "https://flexboxfroggy.com/#pt-br",
+            link: "https://dev.mysql.com/doc/",
           },
         ],
       },
     ],
   },
   {
-    title: "JavaScript",
+    title: "Java",
     categories: [
       {
         name: "VÍDEOS",
         items: [
           {
-            title: "Curso Grátis de JavaScript Moderno",
+            title: "Curso de PROGRAMAÇÃO JAVA para INICIANTES",
             thumbnail:
-              "https://img.youtube.com/vi/BXqUH86F-kA/maxresdefault.jpg",
-            link: "https://www.youtube.com/watch?v=BXqUH86F-kA&list=PLntvgXM11X6pi7mW0O4ZmfUI1xDSIbmTm&ab_channel=CursoemV%C3%ADdeo", // Link do vídeo
+              "https://img.youtube.com/vi/nODe5lFcGpg/maxresdefault.jpg",
+            link: "https://www.youtube.com/watch?v=nODe5lFcGpg&ab_channel=FernandaKipper%7CDev",
           },
           {
-            title: "Desafios JavaScript",
+            title: "CURSO DE JAVA PARA INICIANTES",
             thumbnail:
-              "https://img.youtube.com/vi/bXim6-jCflk/maxresdefault.jpg",
-            link: "https://www.youtube.com/watch?v=bXim6-jCflk&list=PLz_pSrQW_5xJexe74z50HXLCkYDKfks8S&ab_channel=FabioBergmann", // Link do vídeo
+              "https://img.youtube.com/vi/mRryrODqQcw/maxresdefault.jpg",
+            link: "https://www.youtube.com/watch?v=mRryrODqQcw&list=PLJ0AcghBBWSi6nK2CUkw9ngvwWB1gE8mL&ab_channel=TiagoAguiar",
           },
           {
-            title: "Curso JavaScript",
+            title: "Maratona Java Virado No Jiraya",
             thumbnail:
-              "https://img.youtube.com/vi/TkD0QMyBa28/maxresdefault.jpg",
-            link: "https://www.youtube.com/watch?v=TkD0QMyBa28&list=PLnDvRpP8BneysKU8KivhnrVaKpILD3gZ6&ab_channel=MatheusBattisti-HoradeCodar", // Link do vídeo
+              "https://img.youtube.com/vi/VKjFuX91G5Q/maxresdefault.jpg",
+            link: "https://www.youtube.com/watch?v=VKjFuX91G5Q&list=PL62G310vn6nFIsOCC0H-C2infYgwm8SWW&ab_channel=DevDojo",
           },
         ],
       },
@@ -183,24 +187,25 @@ const sections = [
         name: "GUIA DE APRENDIZADO",
         items: [
           {
-            title: "MDN Web Docs - JavaScript",
+            title: "Documentação Java",
             thumbnail: logoGuiaAprendizado,
-            link: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript",
+            link: "https://docs.oracle.com/en/java/",
           },
           {
-            title: "W3Schools - JavaScript",
+            title: "W3Schools - Java",
             thumbnail: logoGuiaAprendizado,
-            link: "https://developer.mozilla.org/pt-BR/docs/Web/CSShttps://www.w3schools.com/js/",
+            link: "https://www.w3schools.com/java/",
           },
           {
-            title: "Alura - JavaScript",
+            title: "Dio - Dicas Úteis em Java",
             thumbnail: logoGuiaAprendizado,
-            link: "https://www.alura.com.br/artigos/javascript",
+            link: "https://www.dio.me/articles/dicas-uteis-para-iniciantes-em-programacao-java",
           },
         ],
       },
     ],
   },
+
   {
     title: "Ide Online",
     categories: [
@@ -208,14 +213,14 @@ const sections = [
         // name: "GUIA DE APRENDIZADO",
         items: [
           {
-            title: "CodePen",
+            title: "JDoodle - Java",
             thumbnail: logoGuiaAprendizado,
-            link: "https://codepen.io/pen/",
+            link: "https://www.jdoodle.com/online-java-compiler",
           },
           {
-            title: "Programiz",
+            title: "Programiz - SQL",
             thumbnail: logoGuiaAprendizado,
-            link: "https://www.programiz.com/html/online-compiler/",
+            link: "https://www.programiz.com/sql/online-compiler/",
           },
         ],
       },
@@ -223,7 +228,7 @@ const sections = [
   },
 ];
 
-function CursosFront() {
+function CursosBack() {
   const sectionRefs = useRef({});
 
   const handleScrollToSection = (sectionTitle) => {
@@ -273,13 +278,17 @@ function CursosFront() {
               {section.title === "Guia de Primeiros Passos" && (
                 <RiGuideFill className={styles.icon} />
               )}
-              {section.title === "Html" && <FaHtml5 className={styles.icon} />}
-              {section.title === "Css" && <FaCss3Alt className={styles.icon} />}
-              {section.title === "JavaScript" && (
-                <SiJavascript className={styles.icon} />
+              {section.title === "Node.js" && (
+                <FaNodeJs className={styles.icon} />
+              )}
+              {section.title === "Banco de Dados" && (
+                <FaDatabase className={styles.icon} />
               )}
               {section.title === "Ide Online" && (
                 <FaComputer className={styles.icon} />
+              )}
+              {section.title === "Java" && (
+                <RiJavaLine className={styles.icon} />
               )}
               {section.title}
             </h2>
@@ -316,4 +325,4 @@ function CursosFront() {
   );
 }
 
-export default CursosFront;
+export default CursosBack;

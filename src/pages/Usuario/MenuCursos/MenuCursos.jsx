@@ -22,7 +22,7 @@ const areas = [
       "O Backend trata da lógica e dos dados que dão suporte ao sistema, usando tecnologias como Node.js, Python e Java.",
     icon: <FaDatabase />,
     image: logoBackEnd,
-    link: "/backend",
+    link: "/CursosBack",
   },
   {
     title: "DevOps",
