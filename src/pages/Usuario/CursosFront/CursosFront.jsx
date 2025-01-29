@@ -6,6 +6,7 @@ import {
   FaCss3Alt,
   FaHtml5,
 } from "react-icons/fa";
+import { FaComputer } from "react-icons/fa6";
 import { RiGuideFill } from "react-icons/ri";
 import { SiJavascript } from "react-icons/si";
 import Slider from "react-slick";
@@ -37,7 +38,7 @@ NextArrow.propTypes = {
 
 const sections = [
   {
-    title: "ROADMAP",
+    title: "GUIA DE PRIMEIROS PASSOS",
     categories: [
       {
         name: "GUIA DE APRENDIZADO",
@@ -200,6 +201,26 @@ const sections = [
       },
     ],
   },
+  {
+    title: "IDE ONLINE",
+    categories: [
+      {
+        // name: "GUIA DE APRENDIZADO",
+        items: [
+          {
+            title: "CodePen",
+            thumbnail: logoGuiaAprendizado,
+            link: "https://codepen.io/pen/",
+          },
+          {
+            title: "Programiz",
+            thumbnail: logoGuiaAprendizado,
+            link: "https://www.programiz.com/html/online-compiler/",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 function CursosFront() {
@@ -249,13 +270,16 @@ function CursosFront() {
             ref={(el) => (sectionRefs.current[section.title] = el)}
           >
             <h2 className={styles.sectionTitle}>
-              {section.title === "ROADMAP" && (
+              {section.title === "GUIA DE PRIMEIROS PASSOS" && (
                 <RiGuideFill className={styles.icon} />
               )}
               {section.title === "HTML" && <FaHtml5 className={styles.icon} />}
               {section.title === "CSS" && <FaCss3Alt className={styles.icon} />}
               {section.title === "JavaScript" && (
                 <SiJavascript className={styles.icon} />
+              )}
+              {section.title === "IDE ONLINE" && (
+                <FaComputer className={styles.icon} />
               )}
               {section.title}
             </h2>
