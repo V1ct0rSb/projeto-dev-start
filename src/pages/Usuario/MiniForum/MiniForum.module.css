@@ -1,0 +1,140 @@
+/* :root {
+  --corBotao: #119fe3;
+  --hoverBotao: #0056b3;
+  --corTitulo: #f1f5f9;
+  --corParagrafo: #f1f5f9;
+  --corTrasicaoBorda: #5d5d5d;
+  --fundoPreto: #121212;
+} */
+
+.title {
+  font-size: 2.5rem;
+  margin: 40px 0 20px;
+  font-weight: bold;
+  color: var(--corTitulo);
+}
+
+.title {
+  font-size: 2.5rem;
+  margin: 40px 0 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.posts {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #1e1e1e;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  padding: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid var(--corTrasicaoBorda);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+  border-color: var(--corBotao);
+  transform: translateY(-3px);
+}
+
+.expanded {
+  background-color: #282828;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid var(--corTrasicaoBorda);
+  padding-bottom: 10px;
+}
+
+.postTitle {
+  font-size: 1.8rem;
+  text-align: left;
+  flex: 1;
+  font-weight: 700;
+  color: var(--corTitulo);
+}
+
+.postContent {
+  font-size: 1.1rem;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.details {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.comments {
+  margin-top: 10px;
+}
+
+.comment {
+  background: #333;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  transition: background 0.3s;
+}
+
+.comment:hover {
+  background: #444;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.button {
+  background-color: var(--corBotao);
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.button:hover {
+  background-color: var(--hoverBotao);
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.commentInput {
+  display: flex;
+  margin-top: 10px;
+}
+
+.input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--corTrasicaoBorda);
+  border-radius: 5px;
+  margin-right: 10px;
+  background-color: #2a2a2a;
+  color: var(--corParagrafo);
+}
+
+.input::placeholder {
+  color: #888;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--corBotao);
+}

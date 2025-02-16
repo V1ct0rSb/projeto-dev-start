@@ -23,7 +23,7 @@ export default function NavbarHome() {
         <a className={styles.navLink}>
           <ImGithub />
         </a>
-        <a className={styles.navLink}>
+        <a className={styles.navLink} href="/MiniForum">
           <FaDiscord />
         </a>
       </nav>

@@ -9,6 +9,7 @@ import MenuCursos from "./pages/Usuario/MenuCursos/MenuCursos.jsx";
 import "./styles/Global.css";
 import LoginAdmin from "./pages/Admin/Login/LoginAdmin.jsx";
 import CursosBackend from "./pages/Usuario/CursosBack/CursosBack.jsx";
+import MiniForum from './pages/Usuario/MiniForum/MiniForum';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/LoginAdmin",
         element: <LoginAdmin />,
+      },
+      {
+        path: "/MiniForum",
+        element: <MiniForum />,
       },
     ],
   },
