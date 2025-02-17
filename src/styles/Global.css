@@ -11,10 +11,18 @@
 :root {
   --corBotao: #119fe3;
   --hoverBotao: #0056b3;
+
   --corTitulo: #f1f5f9;
   --corParagrafo: #f1f5f9;
-  --corTrasicaoBorda: #5d5d5d;
+
+  --corTransicaoBorda: #5d5d5d;
+
   --fundoPreto: #121212;
+
+  --corFundoCard: #1e1e1e;
+  --corFundoCardExpandido: #282828;
+  --corComentario: #333;
+  --corComentarioHover: #444;
 }
 
 html {

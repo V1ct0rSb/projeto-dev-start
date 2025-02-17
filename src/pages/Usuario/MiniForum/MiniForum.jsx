@@ -6,6 +6,7 @@ import {
   ThumbsUp,
 } from "lucide-react";
 import { useState } from "react";
+import Footer from "../../../components/Footer/Footer";
 import NavbarHome from "../../../components/NavbarHome/NavbarHome";
 import styles from "./MiniForum.module.css";
 
@@ -23,6 +24,7 @@ const posts = [
       { user: "DevMaster", text: "Isso parece incrível! Como funciona?" },
       { user: "CodeLover", text: "Tem código disponível no GitHub?" },
     ],
+    category: "IA",
   },
   {
     id: 2,
@@ -39,6 +41,7 @@ const posts = [
         text: "Também estou nessa fase, ansioso pelas respostas!",
       },
     ],
+    category: "Carreira",
   },
   {
     id: 3,
@@ -55,6 +58,7 @@ const posts = [
         text: "Já tentou usar ponteiros para manipular as estruturas?",
       },
     ],
+    category: "Desenvolvimento",
   },
   {
     id: 4,
@@ -75,6 +79,7 @@ const posts = [
         text: "Estude bem a documentação oficial, tem muitos recursos lá.",
       },
     ],
+    category: "Mobile",
   },
   {
     id: 5,
@@ -95,6 +100,7 @@ const posts = [
         text: "Comece com CI/CD básico, depois expanda conforme o time cresce.",
       },
     ],
+    category: "DevOps",
   },
   {
     id: 6,
@@ -115,12 +121,14 @@ const posts = [
         text: "Para algo mais avançado, vá de TensorFlow ou PyTorch, mas comece devagar.",
       },
     ],
+    category: "IA",
   },
 ];
 
 export default function MiniForum() {
   const [expandedPost, setExpandedPost] = useState(null);
-  const [newComment, setNewComment] = useState({}); // Armazena o novo comentário para cada post
+  const [newComment, setNewComment] = useState({});
+  const [selectedCategory, setSelectedCategory] = useState("Todos");
 
   const togglePost = (id) => {
     setExpandedPost(expandedPost === id ? null : id);
@@ -134,77 +142,112 @@ export default function MiniForum() {
     const post = posts.find((p) => p.id === postId);
     if (newComment[postId]) {
       post.comments.push({ user: "Você", text: newComment[postId] });
-      setNewComment((prev) => ({ ...prev, [postId]: "" })); // Limpa o campo de entrada
+      setNewComment((prev) => ({ ...prev, [postId]: "" }));
     }
   };
 
+  const categories = [
+    "Todos",
+    "IA",
+    "Desenvolvimento",
+    "Mobile",
+    "Carreira",
+    "DevOps",
+  ];
+
+  const filteredPosts =
+    selectedCategory === "Todos"
+      ? posts
+      : posts.filter((post) => post.category === selectedCategory);
+
   return (
-    <div className={styles.container}>
+    <>
       <NavbarHome />
-      <h1 className={styles.title}>Mini Fórum</h1>
-      <div className={styles.posts}>
-        {posts.map((post) => (
-          <div
-            key={post.id}
-            className={`${styles.card} ${
-              expandedPost === post.id ? styles.expanded : ""
-            }`}
+      <div className={styles.container}>
+        <h1 className={styles.title}>Mini Fórum</h1>
+        <div className={styles.filter}>
+          <label htmlFor="category">Filtrar por categoria:</label>
+          <select
+            id="category"
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className={styles.select}
           >
-            <div className={styles.header} onClick={() => togglePost(post.id)}>
-              <h2 className={styles.postTitle}>{post.title}</h2>
-              {expandedPost === post.id ? (
-                <ChevronUp size={24} />
-              ) : (
-                <ChevronDown size={24} />
+            {categories.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className={styles.posts}>
+          {filteredPosts.map((post) => (
+            <div
+              key={post.id}
+              className={`${styles.card} ${
+                expandedPost === post.id ? styles.expanded : ""
+              }`}
+            >
+              <div
+                className={styles.header}
+                onClick={() => togglePost(post.id)}
+              >
+                <h2 className={styles.postTitle}>{post.title}</h2>
+                {expandedPost === post.id ? (
+                  <ChevronUp size={24} />
+                ) : (
+                  <ChevronDown size={24} />
+                )}
+              </div>
+              <p className={styles.postContent}>{post.content}</p>
+
+              <div className={styles.actions}>
+                <button className={styles.button}>
+                  <ThumbsUp size={18} /> {post.upvotes}
+                </button>
+                <button className={styles.button}>
+                  <MessageCircle size={18} /> {post.comments.length}
+                </button>
+                <button className={styles.button}>
+                  <Share2 size={18} /> Compartilhar
+                </button>
+              </div>
+
+              {expandedPost === post.id && (
+                <div className={styles.details}>
+                  <p>{post.details}</p>
+                  <div className={styles.comments}>
+                    <h3>Comentários:</h3>
+                    {post.comments.map((comment, index) => (
+                      <p key={index} className={styles.comment}>
+                        <strong>{comment.user}:</strong> {comment.text}
+                      </p>
+                    ))}
+                  </div>
+                  <div className={styles.commentInput}>
+                    <input
+                      type="text"
+                      placeholder="Digite seu comentário..."
+                      value={newComment[post.id] || ""}
+                      onChange={(e) =>
+                        handleCommentChange(post.id, e.target.value)
+                      }
+                      className={styles.input}
+                    />
+                    <button
+                      onClick={() => handleCommentSubmit(post.id)}
+                      className={styles.button}
+                    >
+                      Comentar
+                    </button>
+                  </div>
+                </div>
               )}
             </div>
-            <p className={styles.postContent}>{post.content}</p>
-
-            <div className={styles.actions}>
-              <button className={styles.button}>
-                <ThumbsUp size={18} /> {post.upvotes}
-              </button>
-              <button className={styles.button}>
-                <MessageCircle size={18} /> {post.comments.length}
-              </button>
-              <button className={styles.button}>
-                <Share2 size={18} /> Compartilhar
-              </button>
-            </div>
-
-            {expandedPost === post.id && (
-              <div className={styles.details}>
-                <p>{post.details}</p>
-                <div className={styles.comments}>
-                  <h3>Comentários:</h3>
-                  {post.comments.map((comment, index) => (
-                    <p key={index} className={styles.comment}>
-                      <strong>{comment.user}:</strong> {comment.text}
-                    </p>
-                  ))}
-                </div>
-                <div className={styles.commentInput}>
-                  <input
-                    type="text"
-                    placeholder="Digite seu comentário..."
-                    value={newComment[post.id] || ""}
-                    onChange={(e) =>
-                      handleCommentChange(post.id, e.target.value)
-                    }
-                    className={styles.input}
-                  />
-                  <button
-                    onClick={() => handleCommentSubmit(post.id)}
-                    className={styles.button}
-                  >
-                    Comentar
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
-        ))}
+          ))}
+        </div>
+        <Footer />
       </div>
-    </div>
+    </>
   );
 }
