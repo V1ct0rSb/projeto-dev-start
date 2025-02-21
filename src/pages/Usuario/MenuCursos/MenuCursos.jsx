@@ -4,6 +4,7 @@ import logoBackEnd from "../../../assets/logoBackEnd.png";
 import logoDevOps from "../../../assets/logoDevOps.png";
 import logoFrontEnd from "../../../assets/logoFrontEnd.png";
 import logoQA from "../../../assets/logoQA.png";
+import Footer from "../../../components/Footer/Footer";
 import NavbarHome from "../../../components/NavbarHome/NavbarHome";
 import styles from "./MenuCursos.module.css";
 
@@ -71,6 +72,7 @@ function MenuCursos() {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 }
