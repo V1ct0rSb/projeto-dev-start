@@ -31,7 +31,7 @@ const areas = [
       "DevOps une desenvolvimento e operações com automação. Ferramentas populares incluem Docker, Kubernetes e AWS.",
     icon: <FaCogs />,
     image: logoDevOps,
-    link: "/devops",
+    link: "/CursosDevops",
   },
   {
     title: "Test/QA",
