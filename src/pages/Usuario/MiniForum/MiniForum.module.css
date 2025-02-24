@@ -157,3 +157,66 @@
   outline: none;
   border-color: var(--corBotao);
 }
+
+.newPostForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 40rem;
+  margin: 20px auto;
+  background: #1e1e1e;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.newPostInput,
+.newPostTextarea,
+.newPostSelect {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--corTransicaoBorda);
+  border-radius: 6px;
+  background: #2a2a2a;
+  color: var(--corParagrafo);
+  font-size: 1.1rem;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.newPostInput:focus,
+.newPostTextarea:focus,
+.newPostSelect:focus {
+  border-color: var(--corBotao);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.newPostTextarea {
+  min-height: 150px;
+  resize: vertical;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.newPostButton {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  background: var(--corBotao);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.newPostButton:hover {
+  background: var(--hoverBotao);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .newPostForm {
+    max-width: 90%;
+  }
+}

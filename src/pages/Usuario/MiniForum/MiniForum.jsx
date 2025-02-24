@@ -13,7 +13,7 @@ import styles from "./MiniForum.module.css";
 const posts = [
   {
     id: 1,
-    user: "Plotozoario",
+    user: "CodeCraftMaster",
     title: "Extensão VS Code: IA Local 🔥",
     content:
       "Desenvolvi uma extensão que permite usar IA localmente no VS Code! Ela melhora a produtividade sem depender de servidores externos.",
@@ -21,14 +21,14 @@ const posts = [
       "Explico como desenvolvi a extensão, os desafios enfrentados e como você pode instalá-la e testá-la.",
     upvotes: 14,
     comments: [
-      { user: "DevMaster", text: "Isso parece incrível! Como funciona?" },
-      { user: "CodeLover", text: "Tem código disponível no GitHub?" },
+      { user: "TechSavvyDev", text: "Isso parece incrível! Como funciona?" },
+      { user: "CodeExplorer", text: "Tem código disponível no GitHub?" },
     ],
     category: "IA",
   },
   {
     id: 2,
-    user: "Vulpes-Canis",
+    user: "CyberVulpes",
     title: "Começando na carreira tech 💼",
     content:
       "Quais são os primeiros passos para conseguir um trabalho remoto na área de tecnologia? Dicas e experiências são bem-vindas!",
@@ -37,7 +37,7 @@ const posts = [
     upvotes: 5,
     comments: [
       {
-        user: "JuniorDev",
+        user: "DevOnTheRise",
         text: "Também estou nessa fase, ansioso pelas respostas!",
       },
     ],
@@ -45,7 +45,7 @@ const posts = [
   },
   {
     id: 3,
-    user: "Inner_Bit_2279",
+    user: "BitCoder2279",
     title: "Lista, Pilha e Fila em C++ 📚",
     content:
       "Estou com dificuldades para implementar essas estruturas em C++. Alguém pode me ajudar a entender melhor?",
@@ -54,74 +54,11 @@ const posts = [
     upvotes: 6,
     comments: [
       {
-        user: "CodeHelper",
+        user: "DataStructuresGuru",
         text: "Já tentou usar ponteiros para manipular as estruturas?",
       },
     ],
     category: "Desenvolvimento",
-  },
-  {
-    id: 4,
-    user: "DevExplorer",
-    title: "Minha jornada aprendendo Flutter 🚀",
-    content:
-      "Estou começando a aprender Flutter e queria saber quais são as melhores práticas para quem está começando.",
-    details:
-      "Quais dicas você tem para iniciantes em Flutter? Compartilhe links úteis, tutoriais, ou experiências de quem já passou por isso.",
-    upvotes: 12,
-    comments: [
-      {
-        user: "FlutterFan",
-        text: "Não se esqueça de usar o Hot Reload! Ajuda muito no desenvolvimento.",
-      },
-      {
-        user: "CodeArtist",
-        text: "Estude bem a documentação oficial, tem muitos recursos lá.",
-      },
-    ],
-    category: "Mobile",
-  },
-  {
-    id: 5,
-    user: "TechGuru",
-    title: "DevOps e Automação no Desenvolvimento 🌐",
-    content:
-      "Como implementar práticas de DevOps em um time pequeno? Quais ferramentas são essenciais para começar a automatizar processos?",
-    details:
-      "Vamos discutir as melhores ferramentas e práticas para adotar DevOps em pequenos projetos e como elas podem aumentar a produtividade.",
-    upvotes: 9,
-    comments: [
-      {
-        user: "OpsMaster",
-        text: "Terraform e Jenkins são ferramentas que não podem faltar.",
-      },
-      {
-        user: "AutomateGeek",
-        text: "Comece com CI/CD básico, depois expanda conforme o time cresce.",
-      },
-    ],
-    category: "DevOps",
-  },
-  {
-    id: 6,
-    user: "CodeScribe",
-    title: "Aprendendo Machine Learning com Python 🤖",
-    content:
-      "Estou começando a explorar o Machine Learning com Python. Quais bibliotecas vocês recomendam para projetos iniciais?",
-    details:
-      "Discussão sobre as bibliotecas mais populares como Scikit-Learn, TensorFlow e PyTorch. Qual delas você acha mais acessível para iniciantes?",
-    upvotes: 7,
-    comments: [
-      {
-        user: "MLMaster",
-        text: "Scikit-Learn é ótimo para começar, tem muitos tutoriais disponíveis.",
-      },
-      {
-        user: "AIWizard",
-        text: "Para algo mais avançado, vá de TensorFlow ou PyTorch, mas comece devagar.",
-      },
-    ],
-    category: "IA",
   },
 ];
 
@@ -129,6 +66,11 @@ export default function MiniForum() {
   const [expandedPost, setExpandedPost] = useState(null);
   const [newComment, setNewComment] = useState({});
   const [selectedCategory, setSelectedCategory] = useState("Todos");
+  const [newPost, setNewPost] = useState({
+    title: "",
+    content: "",
+    category: "IA", // Categoria padrão
+  });
 
   const togglePost = (id) => {
     setExpandedPost(expandedPost === id ? null : id);
@@ -144,6 +86,27 @@ export default function MiniForum() {
       post.comments.push({ user: "Você", text: newComment[postId] });
       setNewComment((prev) => ({ ...prev, [postId]: "" }));
     }
+  };
+
+  const handleNewPostChange = (e) => {
+    const { name, value } = e.target;
+    setNewPost((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleNewPostSubmit = (e) => {
+    e.preventDefault();
+    const newPostData = {
+      id: posts.length + 1,
+      user: "Você",
+      title: newPost.title,
+      content: newPost.content,
+      details: "Detalhes sobre a nova dúvida.",
+      upvotes: 0,
+      comments: [],
+      category: newPost.category,
+    };
+    posts.push(newPostData);
+    setNewPost({ title: "", content: "", category: "IA" }); // Resetar o formulário
   };
 
   const categories = [
@@ -165,6 +128,7 @@ export default function MiniForum() {
       <NavbarHome />
       <div className={styles.container}>
         <h1 className={styles.title}>Mini Fórum</h1>
+
         <div className={styles.filter}>
           <label htmlFor="category">Filtrar por categoria:</label>
           <select
@@ -246,6 +210,41 @@ export default function MiniForum() {
             </div>
           ))}
         </div>
+
+        <form onSubmit={handleNewPostSubmit} className={styles.newPostForm}>
+          <input
+            type="text"
+            name="title"
+            placeholder="Título da dúvida"
+            value={newPost.title}
+            onChange={handleNewPostChange}
+            className={styles.newPostInput}
+            required
+          />
+          <textarea
+            name="content"
+            placeholder="Descreva sua dúvida..."
+            value={newPost.content}
+            onChange={handleNewPostChange}
+            className={styles.newPostTextarea}
+            required
+          />
+          <select
+            name="category"
+            value={newPost.category}
+            onChange={handleNewPostChange}
+            className={styles.newPostSelect}
+          >
+            {categories.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+          <button type="submit" className={styles.newPostButton}>
+            Enviar Dúvida
+          </button>
+        </form>
         <Footer />
       </div>
     </>
