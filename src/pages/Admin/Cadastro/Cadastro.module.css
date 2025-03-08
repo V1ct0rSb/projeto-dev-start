@@ -1,0 +1,105 @@
+:root {
+  --corBotao: #119fe3;
+  --hoverBotao: #0056b3;
+
+  --corTitulo: #f1f5f9;
+  --corParagrafo: #f1f5f9;
+
+  --corTransicaoBorda: #5d5d5d;
+
+  --fundoPreto: #121212;
+
+  --corFundoCard: #1e1e1e;
+  --corFundoCardExpandido: #282828;
+}
+
+.admin-container {
+  width: 99vw;
+  height: 85vh;
+  max-width: none;
+  max-height: none;
+  padding: 50px;
+  background: var(--fundoPreto);
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--corTitulo);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.admin-form-container {
+  width: 100%;
+  max-width: 600px;
+  background: var(--corFundoCard);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.admin-form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.admin-label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: var(--corTitulo);
+  font-size: 1rem;
+}
+
+.admin-input,
+.admin-textarea,
+.admin-select {
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid var(--corTransicaoBorda);
+  background: var(--corFundoCardExpandido);
+  color: var(--corParagrafo);
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.admin-input:focus,
+.admin-textarea:focus,
+.admin-select:focus {
+  border-color: var(--corBotao);
+  box-shadow: 0 0 5px rgba(17, 159, 227, 0.5);
+  outline: none;
+}
+
+.admin-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.admin-button {
+  background: var(--corBotao);
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--corTitulo);
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.admin-button:hover {
+  background: var(--hoverBotao);
+  transform: translateY(-2px);
+}
+
+.admin-button:active {
+  transform: translateY(0);
+}

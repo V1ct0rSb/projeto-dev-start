@@ -11,6 +11,7 @@ import LoginAdmin from "./pages/Admin/Login/LoginAdmin.jsx";
 import CursosBackend from "./pages/Usuario/CursosBack/CursosBack.jsx";
 import MiniForum from './pages/Usuario/MiniForum/MiniForum';
 import CursosDevops from './pages/Usuario/CursosDevops/CursoDevops.jsx';
+import Cadastro from './pages/Admin/Cadastro/Cadastro.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "/CursosDevops",
         element: <CursosDevops />,
+      }, 
+      {
+        path: "/Cadastro",
+        element: <Cadastro />,
       }
     ],
   },

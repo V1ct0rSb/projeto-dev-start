@@ -19,6 +19,11 @@ const AdminLogin = () => {
     navigate("/");
   };
 
+  const handleCadastro = (e) => {
+    e.preventDefault();
+    navigate("/Cadastro");
+  }
+
   return (
     <>
       <NavbarHome />
@@ -55,7 +60,7 @@ const AdminLogin = () => {
                   className={styles.input}
                 />
               </div>
-              <button type="submit" className={styles.button}>
+              <button type="submit" className={styles.button} onClick={handleCadastro}>
                 Entrar
               </button>
             </form>
