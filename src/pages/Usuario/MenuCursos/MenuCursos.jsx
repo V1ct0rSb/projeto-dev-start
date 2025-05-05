@@ -39,7 +39,7 @@ const areas = [
       "Testes garantem que o software funcione bem. Aprenda sobre testes unitários, integração e ferramentas como Selenium.",
     icon: <FaCheckCircle />,
     image: logoQA,
-    link: "/qa",
+    link: "/CursoTeste",
   },
 ];
 

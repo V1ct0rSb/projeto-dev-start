@@ -221,6 +221,31 @@ const sections = [
       },
     ],
   },
+  {
+    title: "Exercicios",
+    categories: [
+      {
+        // name: "GUIA DE APRENDIZADO",
+        items: [
+          {
+            title: "Formulário de matrícula",
+            thumbnail: "https://s3-figma-hubfile-images-production.figma.com/hub/file/carousel/img/896224359279979d380bb3efb8b0018879563541",
+            link: "https://www.figma.com/community/file/1392235383386426797",
+          },
+          {
+            title: "Card de Produto • Desafio 02",
+            thumbnail: "https://s3-figma-hubfile-images-production.figma.com/hub/file/carousel/img/c251528a5109db28be109953835f44d98fe4660b",
+            link: "https://www.https://www.figma.com/community/file/1195050984449538256.com/html/online-compiler/",
+          },
+          {
+            title: "Receita Junina • Desafio 26",
+            thumbnail: "https://s3-figma-hubfile-images-production.figma.com/hub/file/carousel/img/fc8e5d995f3bb905df9c414cb6222a73ce63c8e6",
+            link: "https://www.figma.com/community/file/1255887923488942888",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 function CursosFront() {
