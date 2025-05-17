@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import {
   FaChevronLeft,
   FaChevronRight,
@@ -15,6 +15,11 @@ import "slick-carousel/slick/slick.css";
 import logoGuiaAprendizado from "../../../assets/logoGuiaAprendizado.png";
 import NavbarHome from "../../../components/NavbarHome/NavbarHome";
 import styles from "./CursosFront.module.css";
+
+import { css } from "@codemirror/lang-css";
+import { html } from "@codemirror/lang-html";
+import CodeMirror from "@uiw/react-codemirror";
+import { FaCode } from "react-icons/fa";
 
 const PrevArrow = ({ onClick }) => (
   <button className={`${styles.arrow} ${styles.prev}`} onClick={onClick}>
@@ -229,27 +234,36 @@ const sections = [
         items: [
           {
             title: "Formulário de matrícula",
-            thumbnail: "https://s3-figma-hubfile-images-production.figma.com/hub/file/carousel/img/896224359279979d380bb3efb8b0018879563541",
+            thumbnail:
+              "https://s3-figma-hubfile-images-production.figma.com/hub/file/carousel/img/896224359279979d380bb3efb8b0018879563541",
             link: "https://www.figma.com/community/file/1392235383386426797",
           },
           {
             title: "Card de Produto • Desafio 02",
-            thumbnail: "https://s3-figma-hubfile-images-production.figma.com/hub/file/carousel/img/c251528a5109db28be109953835f44d98fe4660b",
+            thumbnail:
+              "https://s3-figma-hubfile-images-production.figma.com/hub/file/carousel/img/c251528a5109db28be109953835f44d98fe4660b",
             link: "https://www.https://www.figma.com/community/file/1195050984449538256.com/html/online-compiler/",
           },
           {
             title: "Receita Junina • Desafio 26",
-            thumbnail: "https://s3-figma-hubfile-images-production.figma.com/hub/file/carousel/img/fc8e5d995f3bb905df9c414cb6222a73ce63c8e6",
+            thumbnail:
+              "https://s3-figma-hubfile-images-production.figma.com/hub/file/carousel/img/fc8e5d995f3bb905df9c414cb6222a73ce63c8e6",
             link: "https://www.figma.com/community/file/1255887923488942888",
           },
         ],
       },
     ],
   },
+  {
+    title: "Editor de Código",
+    categories: [], // ou com dados se quiser incluir sliders no futuro
+  },
 ];
 
 function CursosFront() {
   const sectionRefs = useRef({});
+  const [htmlCode, setHtmlCode] = useState("<h1>Hello, HTML!</h1>");
+  const [cssCode, setCssCode] = useState("h1 { color: red; }");
 
   const handleScrollToSection = (sectionTitle) => {
     const sectionElement = sectionRefs.current[sectionTitle];
@@ -275,6 +289,8 @@ function CursosFront() {
   return (
     <>
       <NavbarHome />
+
+      {/* Menu de Categorias */}
       <div className={styles.menu}>
         {sections.map((section) => (
           <button
@@ -286,6 +302,8 @@ function CursosFront() {
           </button>
         ))}
       </div>
+
+      {/* Todas as Seções de Conteúdo */}
       <div className={styles.container}>
         {sections.map((section) => (
           <div
@@ -306,34 +324,75 @@ function CursosFront() {
               {section.title === "Ide Online" && (
                 <FaComputer className={styles.icon} />
               )}
+              {section.title === "Editor de Código" && (
+                <FaCode className={styles.icon} />
+              )}
               {section.title}
             </h2>
-            {section.categories.map((category) => (
-              <div key={category.name} className={styles.category}>
-                <h3 className={styles.categoryTitle}>{category.name}</h3>
-                <Slider {...sliderSettings}>
-                  {category.items.map((item, index) => (
-                    <div
-                      key={index}
-                      className={styles.itemCard}
-                      onClick={() => window.open(item.link, "_blank")}
-                      role="button"
-                      tabIndex={0}
-                      onKeyDown={(e) =>
-                        e.key === "Enter" && window.open(item.link, "_blank")
-                      }
-                    >
-                      <img
-                        src={item.thumbnail}
-                        alt={item.title}
-                        className={styles.itemThumbnail}
-                      />
-                      <div className={styles.itemTitle}>{item.title}</div>
-                    </div>
-                  ))}
-                </Slider>
+
+            {/* Renderizar slider de categorias se houver */}
+            {section.categories.length > 0 &&
+              section.categories.map((category) => (
+                <div key={category.name} className={styles.category}>
+                  <h3 className={styles.categoryTitle}>{category.name}</h3>
+                  <Slider {...sliderSettings}>
+                    {category.items.map((item, index) => (
+                      <div
+                        key={index}
+                        className={styles.itemCard}
+                        onClick={() => window.open(item.link, "_blank")}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) =>
+                          e.key === "Enter" && window.open(item.link, "_blank")
+                        }
+                      >
+                        <img
+                          src={item.thumbnail}
+                          alt={item.title}
+                          className={styles.itemThumbnail}
+                        />
+                        <div className={styles.itemTitle}>{item.title}</div>
+                      </div>
+                    ))}
+                  </Slider>
+                </div>
+              ))}
+
+            {/* Renderizar o editor de código, se for a seção correta */}
+            {section.title === "Editor de Código" && (
+              <div className={styles.editorContainer}>
+                <div className={styles.editors}>
+                  <div className={styles.codeBlock}>
+                    <h3>HTML</h3>
+                    <CodeMirror
+                      value={htmlCode}
+                      height="200px"
+                      extensions={[html()]}
+                      onChange={(value) => setHtmlCode(value)}
+                    />
+                  </div>
+                  <div className={styles.codeBlock}>
+                    <h3>CSS</h3>
+                    <CodeMirror
+                      value={cssCode}
+                      height="200px"
+                      extensions={[css()]}
+                      onChange={(value) => setCssCode(value)}
+                    />
+                  </div>
+                </div>
+                <h3 className={styles.previewTitle}>Preview</h3>
+                <iframe
+                  className={styles.preview}
+                  title="preview"
+                  srcDoc={`<style>${cssCode}</style>${htmlCode}`}
+                  sandbox="allow-scripts"
+                  width="100%"
+                  height="200"
+                ></iframe>
               </div>
-            ))}
+            )}
           </div>
         ))}
       </div>

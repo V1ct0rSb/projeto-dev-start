@@ -228,3 +228,117 @@
     right: -35px;
   }
 }
+
+/* ============================= Editor HTML & CSS ============================= */
+.editorContainer {
+  background-color: #1c1c1c;
+  padding: 40px 150px;
+  border-bottom: 2px solid var(--corTitulo);
+  color: var(--corParagrafo);
+}
+
+.editorTitle {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--corTitulo);
+  margin-bottom: 30px;
+}
+
+.editors {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.codeBlock {
+  flex: 1;
+  min-width: 300px;
+  background-color: #2a2a2a;
+  padding: 20px;
+  border: 2px solid var(--corTitulo);
+  border-radius: 8px;
+}
+
+.codeBlock h3 {
+  margin-bottom: 10px;
+  color: var(--corParagrafo);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.previewTitle {
+  margin-top: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--corTitulo);
+}
+
+.preview {
+  margin-top: 20px;
+  width: 100%;
+  height: 300px;
+  border: 2px solid var(--corTitulo);
+  border-radius: 8px;
+  background-color: white;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .editorContainer {
+    padding: 40px 80px;
+  }
+
+  .editorTitle {
+    font-size: 28px;
+  }
+
+  .preview {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .editorContainer {
+    padding: 30px 20px;
+  }
+
+  .editorTitle {
+    font-size: 24px;
+  }
+
+  .preview {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .editorTitle {
+    font-size: 20px;
+  }
+
+  .previewTitle {
+    font-size: 18px;
+  }
+
+  .preview {
+    height: 200px;
+  }
+}
+
+
+/* Estiliza o texto e fundo do editor CodeMirror */
+:global(.cm-editor) {
+  color: black !important;
+  background-color: white !important;
+}
+
+/* Estiliza o conteúdo digitado (dentro da área de edição) */
+:global(.cm-content) {
+  color: black !important;
+  background-color: white !important;
+}
+
+/* Se o cursor estiver invisível por contraste */
+:global(.cm-cursor) {
+  border-left: 1px solid black !important;
+}
